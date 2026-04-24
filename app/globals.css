@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Initial means override tailwind default colors */
+  --color-*: initial;
+
+  --color-primary: var(--c-primary);
+  --color-secondary: var(--c-secondary);
+  --color-gray: var(--c-gray);
+  --color-bg-first: var(--c-bg);
+  --color-bg-second: var(--c-bg-sn);
+  --color-blue: var(--c-blue);
+  --color-white: #fff;
+  --color-red: #fb2c36;
+  --color-navbar: var(--c-navbar);
+  --color-navbar-text: var(--c-navbar-text);
+}
+
+:root[data-theme="light"] {
+  --c-primary: #1f1f24;
+  --c-secondary: #5e5e65;
+  --c-bg: rgb(238, 241, 245);
+  --c-bg-sn: #ffffff;
+  --c-gray: #8f8f92;
+  --c-blue: #3b82f6;
+  --c-hero:
+    linear-gradient(rgba(238, 241, 245, 0.55), rgba(238, 241, 245, 0.55)),
+    url("/images/crissxcross.png");
+  --c-navbar: #3b82f6;
+  --c-navbar-text: #7ab7fc;
+}
+:root[data-theme="dark"] {
+  --c-primary: #ffffff;
+  --c-secondary: #bcbcbe;
+  --c-bg: #272730;
+  --c-bg-sn: #1f1f24;
+  --c-gray: #8f8f92;
+  --c-blue: #3b82f6;
+  --c-hero: url("/images/crissxcross.png");
+  --c-navbar: #272730;
+  --c-navbar-text: #8f8f92;
+}
+
+@layer base {
+  :root,
+  html,
+  body {
+    background-color: var(--color-bg-first);
+    color: var(--color-primary);
+    /* This ensures a smooth font smoothing on Mac */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  *::before,
+  *::after {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+@layer components {
+  .bg-hero {
+    background-image: var(--c-hero);
+  }
+
+  .tooltip {
+    @apply bg-bg-first text-primary shadow-[0_4px_12px_rgba(0,0,0,0.15)];
+    @apply px-3 py-2 rounded-xl whitespace-nowrap font-semibold text-sm;
+    @apply absolute bottom-full left-[50%] -translate-x-0.5;
+    @apply opacity-0 -translate-y-1.25 transition-all duration-200 ease-in z-10;
+  }
+}
