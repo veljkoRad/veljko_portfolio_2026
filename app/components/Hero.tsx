@@ -45,7 +45,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
               </button>
             </div>
           </div>
-          <div className="flex absolute  z-10  max-sm:w-45 max-md:max-w-70 max-lg:max-w-87 max-xl:max-w-115 bottom-0  -right-10 max-lg:right-4 self-end">
+          <div className="flex absolute  z-10 max-xs:!w-35  max-sm:w-50 max-md:max-w-70 max-lg:max-w-87 max-xl:max-w-115 bottom-0  -right-10 max-lg:right-4 self-end">
             <Image
               priority
               src="/images/gear.svg"

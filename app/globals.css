@@ -14,6 +14,8 @@
   --color-red: #fb2c36;
   --color-navbar: var(--c-navbar);
   --color-navbar-text: var(--c-navbar-text);
+
+  --breakpoint-xs: 400px;
 }
 
 :root[data-theme="light"] {
