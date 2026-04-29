@@ -4,7 +4,15 @@ My personal portfolio. I came from marketing — three years at Fortrade buildin
 
 **Live:** https://veljko-portfolio-2026.vercel.app
 
-**Stack:** Next.js · TypeScript · Tailwind CSS · Framer Motion
+## Stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- EmailJS
+- Lucide React
+- react-hook-form
 
 ---
 
