@@ -42,6 +42,8 @@ export default function Home() {
 
   // Because we get ref after render, we need useEffect to create this observer after first render, and useEffect create it only once, because navSections is memoized with useMemo.
   useEffect(() => {
+    if (isLoading) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -53,7 +55,6 @@ export default function Home() {
       { threshold: 0.2 },
     );
 
-    // Here we add observer to each section, and when section is intersecting with viewport, we set activeSection to that section id.
     navSections.forEach((s) => {
       if (s.ref.current) {
         s.ref.current.id = s.id;
@@ -62,7 +63,7 @@ export default function Home() {
     });
 
     return () => observer.disconnect();
-  }, [navSections]);
+  }, [navSections, isLoading]);
 
   // SCROLL Y ACTIVE SECTION END
 
