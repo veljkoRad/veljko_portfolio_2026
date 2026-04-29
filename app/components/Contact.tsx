@@ -93,7 +93,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     {...field}
                     id="name"
                     placeholder="Your Name"
-                    className={`form-input ${errors.name ? "border-red" : "border-gray"}`}
+                    className={`form-input ${errors.name ? "border-red" : "border-gray"} hover:border-blue`}
                   />
                 )}
               />
@@ -122,7 +122,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     {...field}
                     id="email"
                     placeholder="Your Email"
-                    className={`mt-5 form-input ${errors.email ? "border-red" : "border-gray"}`}
+                    className={`mt-5 form-input ${errors.email ? "border-red" : "border-gray"} hover:border-blue`}
                   />
                 )}
               />
@@ -148,7 +148,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     {...field}
                     id="subject"
                     placeholder="Write a Subject"
-                    className={`mt-5 form-input ${errors.subject ? "border-red" : "border-gray"}`}
+                    className={`mt-5 form-input ${errors.subject ? "border-red" : "border-gray"} hover:border-blue`}
                   />
                 )}
               />
@@ -178,7 +178,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     id="message"
                     placeholder="Your Message"
                     rows={4}
-                    className={`mt-5 form-input ${errors.message ? "border-red" : "border-gray"}`}
+                    className={`mt-5 form-input ${errors.message ? "border-red" : "border-gray"} hover:border-blue`}
                   />
                 )}
               />

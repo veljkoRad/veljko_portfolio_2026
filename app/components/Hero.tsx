@@ -32,7 +32,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
                 Download CV <Download className="ml-2.5" />
               </a>
               <button
-                className="border border-blue w-36 text-primary flex items-center justify-center rounded-2xl px-4 py-4.5 cursor-pointer"
+                className="border border-blue/60 w-36 text-primary flex items-center justify-center rounded-2xl px-4 py-4.5 cursor-pointer group hover:border-blue"
                 onClick={() =>
                   projectRef.current?.scrollIntoView({
                     behavior: "smooth",
@@ -40,7 +40,8 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
                   })
                 }
               >
-                My Work <ArrowRight className="ml-2.5" />
+                My Work{" "}
+                <ArrowRight className="ml-2.5 group-hover:translate-x-1 transform-translate duration-300" />
               </button>
             </div>
           </div>

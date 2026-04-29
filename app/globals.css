@@ -85,11 +85,11 @@
   }
 
   .btn-color {
-    @apply bg-[linear-gradient(90deg,#3b82f6,#60a5fa)];
+    @apply bg-[linear-gradient(90deg,#3b82f6,#60a5fa)] hover:bg-[linear-gradient(90deg,#2563eb,#3b82f6)];
   }
 
   .form-input {
-    @apply border rounded-lg px-3 py-3.5 hover:border-blue;
+    @apply border rounded-lg px-3 py-3.5;
   }
 
   .container-main {

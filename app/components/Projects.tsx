@@ -40,7 +40,7 @@ const Projects = ({ projectRef }: ProjectProps) => {
             {tabs.map((item, index) => (
               <button
                 onClick={() => handleChange(index)}
-                className={`cursor-pointer px-4 py-3 rounded-xl font-semibold ${value === index ? "btn-color text-white" : "bg-hidden text-primary"}`}
+                className={`cursor-pointer px-4 py-3 rounded-xl font-semibold ${value === index ? "btn-color text-white" : "bg-hidden text-primary hover:text-blue"}`}
                 key={item.label}
               >
                 {item.label}
