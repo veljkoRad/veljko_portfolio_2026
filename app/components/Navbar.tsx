@@ -62,7 +62,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
                         });
                       }
                     }}
-                    className={`font-medium transition-colors duration-100 ${
+                    className={`font-medium transition-colors cursor-pointer duration-100 ${
                       active === item.id
                         ? "text-white"
                         : "text-navbar-text hover:text-white"
@@ -86,7 +86,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className={`w-19.5 h-19.5 flex items-center justify-center rounded-none p-2 ml-2 ${theme === "dark" ? "bg-[rgba(0,0,0,0.2)]" : "bg-[rgba(255,255,255,0.2)]"} max-md:bg-transparent transition-colors duration-300`}
+            className={`w-19.5 h-19.5 flex items-center justify-center rounded-none p-2 ml-2 ${theme === "dark" ? "bg-[rgba(0,0,0,0.2)]" : "bg-[rgba(255,255,255,0.2)]"} max-md:bg-transparent transition-colors duration-300 cursor-pointer`}
             aria-label="Toggle light and dark mode"
           >
             {theme === "light" ? (
