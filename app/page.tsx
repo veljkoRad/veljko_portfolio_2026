@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useMemo, useRef } from "react";
+import { AnimatePresence } from "framer-motion";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -7,10 +8,14 @@ import Skill from "./components/Skill";
 import Projects from "./components/Projects";
 import Tools from "./components/Tools";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import LoadingScreen from "./components/UI/LoadingScreen";
 
 export default function Home() {
-  // ScrollY Active Section Start
+  // Loading State
+  const [isLoading, setIsLoading] = useState(true);
 
+  // ScrollY Active Section Start
   const [activeSection, setActiveSection] = useState("Hero");
 
   const heroRef = useRef<HTMLDivElement>(null);
@@ -61,15 +66,35 @@ export default function Home() {
 
   // SCROLL Y ACTIVE SECTION END
 
+  // Loading simulation - remove or replace with actual data loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div>
-      <Navbar active={activeSection} sections={navSections} />
-      <Hero projectRef={projectRef} heroRef={heroRef} />
-      <About aboutRef={aboutRef} />
-      <Skill skillRef={skillRef} />
-      <Projects projectRef={projectRef} />
-      <Tools toolsRef={toolsRef} />
-      <Contact contactRef={contactRef} />
-    </div>
+    <>
+      <AnimatePresence>
+        {isLoading ? (
+          <LoadingScreen key="loading" />
+        ) : (
+          <div key="content">
+            <Navbar active={activeSection} sections={navSections} />
+            <main>
+              <Hero projectRef={projectRef} heroRef={heroRef} />
+              <About aboutRef={aboutRef} />
+              <Skill skillRef={skillRef} />
+              <Projects projectRef={projectRef} />
+              <Tools toolsRef={toolsRef} />
+              <Contact contactRef={contactRef} />
+            </main>
+            <Footer />
+          </div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

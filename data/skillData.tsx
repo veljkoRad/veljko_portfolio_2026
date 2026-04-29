@@ -48,7 +48,7 @@ export const skills = [
     title: "API Integration",
     desc: (
       <>
-        Connect frontends to APIs—from custom WordPress backends to external
+        Connect frontends to APIs - from custom WordPress backends to external
         services like TMDB.
       </>
     ),

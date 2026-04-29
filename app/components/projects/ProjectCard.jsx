@@ -57,9 +57,9 @@ const ProjectCard = ({ cardData }) => {
                 </div>
               </div>
               <div className="mt-6">
-                <div className="group-hover:text-blue text-primary/90  max-sm:text-2xl text-4xl font-semibold ">
+                <h3 className="group-hover:text-blue text-primary/90  max-sm:text-2xl text-4xl font-semibold ">
                   {item.name}
-                </div>
+                </h3>
                 <div className="mt-4 text-secondary max-sm:text-sm max-w-[40ch]"
                 >
                   {item.desc}

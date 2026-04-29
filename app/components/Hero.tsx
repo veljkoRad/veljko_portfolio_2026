@@ -13,12 +13,12 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
         <div className="relative max-w-7xl w-full mx-auto flex max-lg:justify-center h-[93vh]  ">
           <div className="relative flex flex-col justify-center z-20 w-full  max-sm:max-w-90 ">
             <h1 className="text-primary  max-md:text-5xl max-lg:text-6xl text-7xl font-bold">
-              Hi, I'm Veljko
+              Hi, I'm Veljko <br />
+              <span className="text-blue font-bold max-sm:text-3xl max-lg:text-4xl text-7xl ">
+                Web Developer
+              </span>
             </h1>
-            <h2 className="text-blue font-bold max-sm:text-3xl max-lg:text-4xl text-7xl ">
-              Web Developer
-            </h2>
-            <p className="mt-4 text-secondary max-w-[68ch] max-lg:max-w-[50ch] font-medium ">
+            <p className="mt-4 text-secondary max-w-[60ch] max-lg:max-w-[50ch] font-medium ">
               I build websites and apps that convert. Whether it's landing pages
               or React projects. Lead gen background means I think like a
               marketer first, developer second.
@@ -27,7 +27,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
               <a
                 href="/cv_2026.pdf"
                 download
-                className="bg-[linear-gradient(90deg,#3b82f6,#60a5fa)] flex items-center justify-center px-7 py-4.5 rounded-2xl text-white "
+                className="btn-color flex items-center justify-center px-7 py-4.5 rounded-2xl text-white "
               >
                 Download CV <Download className="ml-2.5" />
               </a>
@@ -44,7 +44,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
               </button>
             </div>
           </div>
-          <div className="flex absolute  z-10  max-sm:w-45 max-md:max-w-70 max-lg:max-w-87 bottom-0  -right-10 max-lg:right-4 self-end">
+          <div className="flex absolute  z-10  max-sm:w-45 max-md:max-w-70 max-lg:max-w-87 max-xl:max-w-115 bottom-0  -right-10 max-lg:right-4 self-end">
             <Image
               priority
               src="/images/gear.svg"

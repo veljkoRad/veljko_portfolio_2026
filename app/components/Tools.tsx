@@ -2,6 +2,7 @@
 import { RefObject } from "react";
 import { motion, useInView } from "framer-motion";
 import { techStack, techDesc } from "@/data/toolsData";
+import Image from "next/image";
 
 type ToolsProps = {
   toolsRef: RefObject<HTMLDivElement | null>;
@@ -10,11 +11,9 @@ const Tools = ({ toolsRef }: ToolsProps) => {
   const toolsInView = useInView(toolsRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-30 px-6">
-      <div className="max-w-7xl w-full mx-auto ">
-        <div className=" text-6xl max-md:text-5xl font-bold text-blue text-center">
-          Tools
-        </div>
+    <section className=" px-6">
+      <div className="container-main">
+        <h2 className=" section-title text-center">Tools</h2>
         <motion.div
           ref={toolsRef}
           initial="hidden"
@@ -46,7 +45,13 @@ const Tools = ({ toolsRef }: ToolsProps) => {
                         {item.name}
                       </div>
                       <div className="bg-bg-second rounded-xl w-20 h-20 flex items-center justify-center transition-all duration-300 ease-in border border-blue/20 hover:border-blue">
-                        <img alt={item.name} src={item.icon} className="h-10" />
+                        <Image
+                          alt={item.name}
+                          src={item.icon}
+                          width={40}
+                          height={40}
+                          className="h-10 w-auto"
+                        />
                       </div>
                     </div>
                   ),
@@ -70,7 +75,7 @@ const Tools = ({ toolsRef }: ToolsProps) => {
                         {item.name}
                       </div>
                       <div className="bg-bg-second rounded-xl w-20 h-20 flex items-center justify-center transition-all duration-300 ease-in border border-blue/40 hover:border-blue">
-                        <img alt={item.name} src={item.icon} className="h-10" />
+                        <Image alt={item.name} src={item.icon} width={40} height={40} className="h-10 w-auto" />
                       </div>
                     </div>
                   ),
@@ -86,9 +91,10 @@ const Tools = ({ toolsRef }: ToolsProps) => {
               {techDesc.map((item) => (
                 <li
                   key={item.title}
-                  className="list-disc pl-1 text-xl max-sm:text-base max-w-[45ch]"
+                  className="list-disc pl-1 text-xl max-sm:text-base max-w-[45ch] font-semibold"
                 >
-                  <strong>{item.title}:</strong> {item.desc}
+                  {item.title}:{" "}
+                  <span className="text-secondary"> {item.desc}</span>
                 </li>
               ))}
             </ul>

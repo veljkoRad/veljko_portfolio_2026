@@ -20,11 +20,9 @@ const Projects = ({ projectRef }: ProjectProps) => {
   const projectInView = useInView(projectRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-30 px-6 bg-bg-second">
-      <div className="max-w-7xl w-full mx-auto">
-        <h3 className="text-6xl max-md:text-5xl font-bold text-blue">
-          My Projects
-        </h3>
+    <section className=" px-6 bg-bg-second">
+      <div className="container-main">
+        <h2 className="section-title">My Projects</h2>
         <motion.div
           ref={projectRef}
           initial="hidden"
@@ -42,9 +40,9 @@ const Projects = ({ projectRef }: ProjectProps) => {
             {tabs.map((item, index) => (
               <button
                 onClick={() => handleChange(index)}
-                className={`cursor-pointer px-4 py-3 rounded-xl font-semibold ${value === index ? "bg-[linear-gradient(90deg,#3b82f6,#60a5fa)] text-white" : "bg-hidden text-primary"}`}
+                className={`cursor-pointer px-4 py-3 rounded-xl font-semibold ${value === index ? "btn-color text-white" : "bg-hidden text-primary"}`}
                 key={item.label}
-              >             
+              >
                 {item.label}
               </button>
             ))}

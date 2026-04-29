@@ -56,9 +56,9 @@ const AnimatedCircularProgress = ({
       </div>
 
       <div className="text-primary text-lg font-bold">{label}</div>
-      <div className="text-secondary text-sm font-medium text-center ">
+      <p className="text-secondary text-sm font-medium text-center ">
         {description}
-      </div>
+      </p>
     </motion.div>
   );
 };

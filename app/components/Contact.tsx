@@ -52,8 +52,8 @@ const Contact = ({ contactRef }: ContactProps) => {
   };
 
   return (
-    <section className="bg-bg-first px-6">
-      <div className="py-30 max-w-7xl max-lg:max-w-145 w-full mx-auto">
+    <section className="bg-bg-second px-6">
+      <div className="container-main max-lg:max-w-145 ">
         <motion.div
           ref={contactRef}
           initial={{ opacity: 0, y: 30 }}
@@ -69,9 +69,7 @@ const Contact = ({ contactRef }: ContactProps) => {
             className=" rounded-xl  max-lg:max-w-145 max-xl:max-w-110 max-w-145 w-full h-full"
           />
           <div>
-            <div className="text-6xl max-lg:text-5xl font-bold text-blue">
-              Contact Me
-            </div>
+            <h2 className="section-title">Contact Me</h2>
             <div className="text-secondary text-xl mt-2 max-lg:text-lg">
               I’m always excited to take on new projects and work with creative
               teams. Whether you have a project in mind or just want to connect,
@@ -83,6 +81,9 @@ const Contact = ({ contactRef }: ContactProps) => {
               noValidate
             >
               {/* Name */}
+              <label htmlFor="name" className="sr-only">
+                Your Name
+              </label>
               <Controller
                 name="name"
                 control={control}
@@ -90,8 +91,9 @@ const Contact = ({ contactRef }: ContactProps) => {
                 render={({ field }) => (
                   <input
                     {...field}
+                    id="name"
                     placeholder="Your Name"
-                    className={`border rounded-lg px-3 py-3.5 hover:border-blue ${errors.name ? "border-red" : "border-gray"}`}
+                    className={`form-input ${errors.name ? "border-red" : "border-gray"}`}
                   />
                 )}
               />
@@ -102,6 +104,9 @@ const Contact = ({ contactRef }: ContactProps) => {
               )}
 
               {/* Email */}
+              <label htmlFor="email" className="sr-only">
+                Your Email
+              </label>
               <Controller
                 name="email"
                 control={control}
@@ -115,8 +120,9 @@ const Contact = ({ contactRef }: ContactProps) => {
                 render={({ field }) => (
                   <input
                     {...field}
+                    id="email"
                     placeholder="Your Email"
-                    className={`mt-5 border rounded-lg px-3 py-3.5 hover:border-blue ${errors.email ? "border-red" : "border-gray"}`}
+                    className={`mt-5 form-input ${errors.email ? "border-red" : "border-gray"}`}
                   />
                 )}
               />
@@ -127,6 +133,9 @@ const Contact = ({ contactRef }: ContactProps) => {
               )}
 
               {/* Subject */}
+              <label htmlFor="subject" className="sr-only">
+                Subject
+              </label>
               <Controller
                 name="subject"
                 control={control}
@@ -137,8 +146,9 @@ const Contact = ({ contactRef }: ContactProps) => {
                 render={({ field }) => (
                   <input
                     {...field}
+                    id="subject"
                     placeholder="Write a Subject"
-                    className={`mt-5 border rounded-lg px-3 py-3.5 hover:border-blue ${errors.subject ? "border-red" : "border-gray"}`}
+                    className={`mt-5 form-input ${errors.subject ? "border-red" : "border-gray"}`}
                   />
                 )}
               />
@@ -149,6 +159,9 @@ const Contact = ({ contactRef }: ContactProps) => {
               )}
 
               {/* Message */}
+              <label htmlFor="message" className="sr-only">
+                Message
+              </label>
               <Controller
                 name="message"
                 control={control}
@@ -162,9 +175,10 @@ const Contact = ({ contactRef }: ContactProps) => {
                 render={({ field }) => (
                   <textarea
                     {...field}
+                    id="message"
                     placeholder="Your Message"
                     rows={4}
-                    className={`mt-5 border rounded-lg px-3 py-3.5 hover:border-blue ${errors.message ? "border-red" : "border-gray"}`}
+                    className={`mt-5 form-input ${errors.message ? "border-red" : "border-gray"}`}
                   />
                 )}
               />
@@ -176,7 +190,7 @@ const Contact = ({ contactRef }: ContactProps) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-5 bg-[linear-gradient(90deg,#3b82f6,#60a5fa)] w-47.5 h-15 rounded-2xl uppercase font-semibold cursor-pointer"
+                className="mt-5 btn-color text-white w-47.5 h-15 rounded-2xl uppercase font-semibold cursor-pointer"
               >
                 {isSubmitting ? "sending..." : "Send Message"}
               </button>

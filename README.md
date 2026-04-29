@@ -35,7 +35,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-1. At the end of project, check semantic elements (h1, h2, h3, h4, p,?)
-2. Loading anitmation, per start.
-3. Check all app, SEO, code writing, bettr performance..
-4. GO on live.
+1. Check all app, SEO, code writing, bettr performance..
+2. Check with Mile is design ok

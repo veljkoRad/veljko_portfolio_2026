@@ -50,6 +50,21 @@
     /* This ensures a smooth font smoothing on Mac */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .section-title {
+    font-family: "Urbanist", sans-serif;
+  }
+
+  input,
+  textarea,
+  button {
+    font-family: "Inter", sans-serif;
   }
 
   *,
@@ -65,10 +80,29 @@
     background-image: var(--c-hero);
   }
 
+  .section-title {
+    @apply text-6xl max-md:text-5xl font-bold text-blue;
+  }
+
+  .btn-color {
+    @apply bg-[linear-gradient(90deg,#3b82f6,#60a5fa)];
+  }
+
+  .form-input {
+    @apply border rounded-lg px-3 py-3.5 hover:border-blue;
+  }
+
+  .container-main {
+    @apply max-w-7xl w-full mx-auto py-30;
+  }
   .tooltip {
     @apply bg-bg-first text-primary shadow-[0_4px_12px_rgba(0,0,0,0.15)];
     @apply px-3 py-2 rounded-xl whitespace-nowrap font-semibold text-sm;
     @apply absolute bottom-full left-[50%] -translate-x-0.5;
     @apply opacity-0 -translate-y-1.25 transition-all duration-200 ease-in z-10;
+  }
+
+  .sr-only {
+    @apply absolute -inset-1 w-1 h-1 overflow-hidden;
   }
 }

@@ -39,7 +39,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
         {/* Logo */}
         <button
           onClick={scrollTop}
-          className="text-white text-base text-left sm:text-xl font-semibold leading-5 sm:leading-6 tracking-widest cursor-pointer"
+          className="text-white text-lg text-left  font-light leading-5 sm:leading-6 tracking-widest cursor-pointer"
         >
           Veljko <br /> Radivojević
         </button>
