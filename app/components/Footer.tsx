@@ -12,9 +12,12 @@ const Footer = () => {
       <div className="max-w-7xl w-full flex flex-row max-md:flex-col items-center justify-space-between  gap-10 py-12 text-primary mx-auto font-medium">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-xl max-md:text-center text-left text-secondary cursor-pointer "
+          className=" cursor-pointer "
         >
-          Veljko <br /> Radivojević
+          <div className="logo-family text-2xl font-semibold tracking-wider max-md:text-center text-left text-secondary">
+            {" "}
+            VR
+          </div>
         </button>
         <div className="flex fled-row justify-center gap-2.5 flex-1">
           <IconButton

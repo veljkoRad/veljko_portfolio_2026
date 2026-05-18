@@ -37,11 +37,11 @@ const Navbar = ({ active, sections }: NavbarProps) => {
     <nav className="fixed bg-navbar top-0 w-full flex [transition:top_0.3s_ease]  z-50 shadow-[0px_2px_4px_-1px_rgba(0,0,0,0.2),0px_4px_5px_0px_rgba(0,0,0,0.14),0px_1px_10px_0px_rgba(0,0,0,0.12)] px-6 ">
       <div className="max-w-7xl w-full mx-auto  flex items-center justify-between">
         {/* Logo */}
-        <button
-          onClick={scrollTop}
-          className="text-white text-lg text-left  font-light leading-5 sm:leading-6 tracking-widest cursor-pointer"
-        >
-          Veljko <br /> Radivojević
+        <button onClick={scrollTop} className=" cursor-pointer">
+          {" "}
+          <div className="logo-family text-white text-3xl text-left  font-semibold tracking-wider">
+            VR
+          </div>
         </button>
         <div className="flex max-md:order-2 gap-2">
           {/* Desktop Navigation */}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Urbanist, Inter } from "next/font/google";
+import { Urbanist, Inter,  Orbitron} from "next/font/google";
 import "./globals.css";
 
 const urbanist = Urbanist({
@@ -8,6 +8,11 @@ const urbanist = Urbanist({
 });
 
 const inter = Inter({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+});
+
+const orbitron = Orbitron({
   weight: ["400", "500", "600"],
   subsets: ["latin"],
 });
@@ -49,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} ${urbanist.className}`}
+      className={`${inter.className} ${urbanist.className} ${orbitron.className}`}
       data-theme="light"
       suppressHydrationWarning
     >
