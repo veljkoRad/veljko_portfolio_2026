@@ -14,7 +14,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
           <div className="relative flex flex-col justify-center z-20 w-full  max-sm:max-w-90 ">
             <h1 className="text-primary  max-md:text-5xl max-lg:text-6xl text-7xl font-bold">
               Hi, I'm Veljko <br />
-              <span className="text-blue font-bold max-sm:text-3xl max-lg:text-4xl text-7xl ">
+              <span className="text-primary font-bold max-sm:text-3xl max-lg:text-4xl text-7xl ">
                 Web Developer
               </span>
             </h1>
