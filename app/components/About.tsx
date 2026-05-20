@@ -42,10 +42,11 @@ const About = ({ aboutRef }: AboutTabContent) => {
           >
             <h2 className="section-title ">About me</h2>
             <p className="text-secondary max-md:text-sm tracking-[1px] font-medium  max-w-[75ch]">
-              I'm a frontend developer who started in lead gen marketing. Spent
-              three years building landing pages and email campaigns (150+) that
-              convert. Now I channel that into React projects. Coding,
-              problem-solving, constant learning. Self-taught, always improving.
+              Frontend Developer with 3 years of experience building responsive
+              marketing websites, landing pages, React/Next.js applications, and
+              CMS-integrated platforms. Experienced in API integrations,
+              frontend performance optimization, and maintaining scalable,
+              production-ready interfaces.
             </p>
             <div className="flex gap-8 mt-4">
               {aboutTabs.map((item, i) => (

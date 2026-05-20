@@ -19,9 +19,9 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
               </span>
             </h1>
             <p className="mt-4 text-secondary max-w-[60ch] max-lg:max-w-[50ch] font-medium ">
-              I build websites and apps that convert. Whether it's landing pages
-              or React projects. Lead gen background means I think like a
-              marketer first, developer second.
+              I build fast, modern marketing websites and React/Next.js
+              applications focused on performance, SEO, and clean user
+              experience.
             </p>
             <div className="flex items-center max-md:items-start gap-4 mt-10 flex-row max-md:flex-col font-bold">
               <a
