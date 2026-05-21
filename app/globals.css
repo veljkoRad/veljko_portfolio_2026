@@ -5,7 +5,8 @@
   --color-*: initial;
 
   --color-primary: var(--c-primary);
-  --color-secondary: var(--c-secondary);
+  --color-secondary: #747474;
+  --color-third: #8f8f92;
   --color-gray: var(--c-gray);
   --color-bg-first: var(--c-bg);
   --color-bg-second: var(--c-bg-sn);
@@ -20,9 +21,8 @@
 
 :root[data-theme="light"] {
   --c-primary: #1f1f24;
-  --c-secondary: #5e5e65;
   --c-bg: rgb(238, 241, 245);
-  --c-bg-sn: #ffffff;
+  --c-bg-sn: rgb(238, 241, 245);
   --c-gray: #8f8f92;
   --c-blue: #3b82f6;
   --c-hero:
@@ -33,8 +33,7 @@
 }
 :root[data-theme="dark"] {
   --c-primary: #ffffff;
-  --c-secondary: #bcbcbe;
-  --c-bg: #272730;
+  --c-bg: #121212;
   --c-bg-sn: #1f1f24;
   --c-gray: #8f8f92;
   --c-blue: #3b82f6;
@@ -78,16 +77,12 @@
 }
 
 @layer components {
-  .bg-hero {
-    background-image: var(--c-hero);
-  }
-
   .logo-family {
     font-family: "orbitron", sans-serif;
   }
 
   .section-title {
-    @apply text-6xl max-md:text-5xl font-bold text-blue;
+    @apply text-4xl text-center max-md:text-5xl font-extrabold text-primary;
   }
 
   .btn-color {
@@ -110,5 +105,75 @@
 
   .sr-only {
     @apply absolute -inset-1 w-1 h-1 overflow-hidden;
+  }
+
+  .button {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: #3b82f6;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    gap: 10px;
+    font-weight: bold;
+    border: 3px solid #ffffff4d;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .button:hover {
+    transform: scale(1.05);
+    border-color: #fff9;
+  }
+
+  .button:hover .icon {
+    transform: translate(4px);
+  }
+
+  .button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+  }
+
+  .button::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+
+    60% {
+      left: 100%;
+    }
+
+    to {
+      left: 100%;
+    }
   }
 }

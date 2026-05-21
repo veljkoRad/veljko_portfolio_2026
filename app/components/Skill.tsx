@@ -12,7 +12,7 @@ const Skill = ({
 
   return (
     <section className="px-6">
-      <div className="bg-hero bg-center bg-auto bg-no-repeat max-sm:bg-repeat-y container-main ">
+      <div className=" bg-center bg-auto bg-no-repeat max-sm:bg-repeat-y container-main ">
         <h2 className="section-title">Skill</h2>
         <motion.div
           ref={skillRef}
