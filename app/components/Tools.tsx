@@ -3,6 +3,7 @@ import { RefObject } from "react";
 import { motion, useInView } from "framer-motion";
 import { techStack, techDesc } from "@/data/toolsData";
 import Image from "next/image";
+import SectionTitle from "./UI/SectionTitle";
 
 type ToolsProps = {
   toolsRef: RefObject<HTMLDivElement | null>;
@@ -11,9 +12,11 @@ const Tools = ({ toolsRef }: ToolsProps) => {
   const toolsInView = useInView(toolsRef, { once: true, margin: "-100px" });
 
   return (
-    <section className=" px-6">
+    <section className=" px-12 max-sm:px-6 ">
       <div className="container-main">
-        <h2 className=" section-title text-center">Tools</h2>
+        <h2 className="section-title ">
+          <SectionTitle>Tools</SectionTitle>
+        </h2>
         <motion.div
           ref={toolsRef}
           initial="hidden"
@@ -75,7 +78,13 @@ const Tools = ({ toolsRef }: ToolsProps) => {
                         {item.name}
                       </div>
                       <div className="bg-bg-second rounded-xl w-20 h-20 flex items-center justify-center transition-all duration-300 ease-in border border-blue/40 hover:border-blue">
-                        <Image alt={item.name} src={item.icon} width={40} height={40} className="h-10 w-auto" />
+                        <Image
+                          alt={item.name}
+                          src={item.icon}
+                          width={40}
+                          height={40}
+                          className="h-10 w-auto"
+                        />
                       </div>
                     </div>
                   ),

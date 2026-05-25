@@ -2,9 +2,7 @@
 import { useState, RefObject } from "react";
 import { motion, useInView } from "framer-motion";
 import { Download } from "lucide-react";
-import { aboutTabContent } from "@/data/aboutData";
-
-const aboutTabs = ["About", "Experience", "Education"];
+import SectionTitle from "./UI/SectionTitle";
 
 type AboutTabContent = {
   aboutRef: RefObject<HTMLDivElement | null>;
@@ -17,18 +15,21 @@ const About = ({ aboutRef }: AboutTabContent) => {
     setValue(newValue);
   };
   return (
-    <section className="bg-bg-second px-6">
+    <section className=" px-12 max-sm:px-6  mt-10">
       <div className="container-main">
         <div className="flex flex-col justify-center items-center gap-4">
           <h2 className="section-title ">
-            ABOUT ME
-            <div className="w-[50%] h-[5px] bg-blue ml-auto mr-[10%] mt-2"></div>
+            <SectionTitle>About Me</SectionTitle>
           </h2>
-          <div></div>
         </div>
 
-        <div className="flex items-start max-lg:items-center justify-between gap-12 mt-12  flex-row max-lg:flex-col-reverse max-sm:max-w-90 max-sm:mx-auto  ">
-          {/* Percentage Cards */}
+        <motion.div
+          ref={aboutRef}
+          initial={{ opacity: 0, y: 30 }}
+          animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex items-center max-lg:items-stretch justify-between gap-12 py-16  flex-row max-lg:flex-col  "
+        >
           <div>
             <p className="text-secondary max-md:text-sm tracking-[1px] font-medium  max-w-[75ch]">
               Frontend Developer with 3 years of experience building modern
@@ -36,42 +37,48 @@ const About = ({ aboutRef }: AboutTabContent) => {
               Focused on scalable UI systems, API integrations, performance, and
               clean user experiences for digital products and businesses
             </p>
-            <a className="button" href="/cv_2026.pdf" download>
+            <a
+              className="button max-w-[200px] mt-6 "
+              href="/cv_2026.pdf"
+              download
+            >
               Download CV
               <Download className="ml-2.5" />
             </a>
           </div>
-          {/* About me */}
-          <motion.div
-            ref={aboutRef}
-            initial={{ opacity: 0, y: 30 }}
-            animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className=" flex flex-col items-start justify-center gap-2.5 "
-          >
-            <div className="flex gap-8 mt-4">
-              {aboutTabs.map((item, i) => (
-                <button
-                  className={`text-lg normal-case font-bold  ${value == i ? "text-blue" : "text-primary"} cursor-pointer ${value == i ? "border-b-2 border-blue" : ""}`}
-                  onClick={() => handleChange(i)}
-                  key={item}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-            {aboutTabContent.map((item, i) => (
-              <div
-                className={`${value !== i ? "hidden" : "block"} `}
-                key={item.title}
-              >
-                <div className="text-secondary max-md:text-sm leading-7  ">
-                  {item.content}
+          <div className=" flex flex-col items-stretch justify-center gap-2.5">
+            <div className=" max-md:text-sm leading-7 flex flex-col gap-6  ">
+              <div className="card ">
+                <div className="card2">
+                  <p className="text-sm max-sm:text-xs font-medium text-blue text-center">
+                    Experience
+                  </p>
+                  <p className="text-lg max-sm:text-base font-bold mt-4">
+                    {" "}
+                    WEB DEVELOPER / MARKETING ASSISTANT
+                  </p>
+                  <p>
+                    Fortrade <br />
+                  </p>
+                  <p className="max-sm:text-xs">2023 - Current</p>
                 </div>
               </div>
-            ))}
-          </motion.div>
-        </div>
+              <div className="card ">
+                <div className="card2">
+                  <p className="text-sm max-sm:text-xs font-medium text-blue text-center">
+                    Education
+                  </p>
+                  <p className="text-lg max-sm:text-base font-bold mt-4">
+                    {" "}
+                    BSc in Mechanical Engineering
+                  </p>
+                  <p>University of Belgrade</p>
+                  <p className="max-sm:text-xs">2018</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

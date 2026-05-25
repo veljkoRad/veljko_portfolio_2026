@@ -1,82 +1,124 @@
-import {
-  BriefcaseBusiness,
-  Mail,
-  Check,
-  MonitorSmartphone,
-  Link,
-} from "lucide-react";
+export const skillsFront = [
+  {
+    icon: (
+      <img src="/images/stackIcons/react.svg" alt="React" className="h-12" />
+    ),
+    title: "React",
+  },
+  {
+    icon: (
+      <img src="/images/stackIcons/next.png" alt="React" className="h-12" />
+    ),
+    title: "Next.js",
+  },
+  {
+    icon: (
+      <img
+        src="/images/stackIcons/typescript.png"
+        alt="React"
+        className="h-12"
+      />
+    ),
+    title: "Typescript",
+  },
+  {
+    icon: (
+      <img
+        src="/images/stackIcons/javascript.png"
+        alt="React"
+        className="h-12"
+      />
+    ),
+    title: "Javascript",
+  },
+  {
+    icon: (
+      <img src="/images/stackIcons/html.png" alt="React" className="h-12" />
+    ),
+    title: "HTML",
+  },
+  {
+    icon: (
+      <img src="/images/stackIcons/css-3.png" alt="React" className="h-12" />
+    ),
+    title: "CSS",
+  },
+];
 
-export const skills = [
+export const skillsUi = [
   {
     icon: (
-      <MonitorSmartphone
-        className="group-hover:text-white text-blue max-sm:text-white"
-        size={54}
-      />
+      <img src="/images/stackIcons/tailwind.svg" alt="React" className="h-12" />
     ),
-    title: "Modern Responsive",
-    desc: (
-      <>
-        {" "}
-        Build responsive pages with animations, dark/light modes, and smooth
-        interactions using React, Next.js and Tailwind.
-      </>
-    ),
+    title: "Tailwind",
   },
   {
     icon: (
-      <Check
-        size={54}
-        className="group-hover:text-white text-blue max-sm:text-white"
+      <img
+        src="/images/stackIcons/material-ui.png"
+        alt="React"
+        className="h-12"
       />
     ),
-    title: "Tested Apps ",
-    desc: (
-      <>
-        Build full-stack applications with TypeScript, React Testing Library,
-        Jest, and GitHub workflows.
-      </>
-    ),
+    title: "Material UI",
   },
   {
     icon: (
-      <Link
-        size={54}
-        className="group-hover:text-white text-blue max-sm:text-white"
+      <img
+        src="/images/stackIcons/framer-motion.svg"
+        alt="React"
+        className="h-12"
       />
     ),
-    title: "API Integration",
-    desc: (
-      <>
-        Connect frontends to APIs - from custom WordPress backends to external
-        services like TMDB.
-      </>
+    title: "Framer Motion",
+  },
+];
+
+export const skillsAPI = [
+  {
+    icon: (
+      <img
+        src="/images/stackIcons/wordpress.png"
+        alt="React"
+        className="h-12"
+      />
     ),
+    title: "WordPress",
+  },
+];
+
+export const skillsDeploy = [
+  {
+    icon: (
+      <img src="/images/stackIcons/github.png" alt="React" className="h-12" />
+    ),
+    title: "GitHub",
   },
   {
     icon: (
-      <BriefcaseBusiness
-        size={54}
-        className="group-hover:text-white text-blue max-sm:text-white"
-      />
+      <img src="/images/stackIcons/vercel.svg" alt="React" className="h-12" />
     ),
-    title: "Marketing Developer",
-    desc: (
-      <>
-        {" "}
-        Understand user psychology and design for conversions. Implement SEO
-        best practices, strategic CTAs.
-      </>
-    ),
+    title: "Vercel",
+  },
+];
+
+export const skillsLang = [
+  {
+    icon: <img src="/images/stackIcons/uk.svg" alt="React" className="h-12" />,
+    title: "English",
   },
   {
     icon: (
-      <Mail
-        size={54}
-        className="group-hover:text-white text-blue max-sm:text-white"
-      />
+      <img src="/images/stackIcons/serbia.svg" alt="React" className="h-12" />
     ),
-    title: "Email Systems",
-    desc: <> Design and code email templates for reliability across clients.</>,
+    title: "Serbia",
   },
+];
+
+export const skillCategories = [
+  { label: "Front-End", skills: skillsFront },
+  { label: "UI Libraries", skills: skillsUi },
+  { label: "API / CMS", skills: skillsAPI },
+  { label: "Deploy", skills: skillsDeploy },
+  { label: "Languages", skills: skillsLang },
 ];

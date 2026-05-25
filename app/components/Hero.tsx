@@ -42,10 +42,10 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
   // Text Animation End
   return (
     <section
-      className="mt-24 px-12 pt-26.5 max-md:pt-12 pb-16 max-sm:pb-0 max-sm:px-6"
+      className="mt-24 px-12 max-sm:px-6  pt-26.5 max-md:pt-12 pb-16 max-sm:pb-0 "
       ref={heroRef}
     >
-      <div className=" max-w-[1440px] max-sm:max-w-90 mx-auto flex flex-col items-center gap-31.5">
+      <div className="  container-main   flex flex-col items-center gap-31.5">
         <div className="relative  w-full flex max-lg:justify-center max-sm:flex-col  ">
           <div className="relative flex flex-col justify-center z-20 w-full   ">
             <h1 className=" max-sm:text-3xl max-md:text-5xl max-xl:text-6xl text-7xl font-extrabold btn-color bg-clip-text text-transparent">
@@ -96,7 +96,15 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
             </div>
 
             <div className="flex items-center max-md:items-start gap-4 mt-8 flex-row max-md:flex-col font-bold">
-              <button className="button">
+              <button
+                className="button"
+                onClick={() =>
+                  projectRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  })
+                }
+              >
                 My Work
                 <ArrowRight />
               </button>
@@ -108,7 +116,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
             height={573}
             src="/images/hero_image.svg"
             alt="profile contact veljko"
-            className="max-w-[500px] max-sm:max-w-[250px]  max-md:max-w-[250px] max-lg:max-w-[300px] max-xl:max-w-[360px] absolute max-sm:static right-0 bottom-0 self-end max-sm:mt-15 "
+            className="max-w-[500px] max-sm:max-w-[250px]  max-md:max-w-[250px] max-lg:max-w-[300px] max-xl:max-w-[360px] absolute max-sm:static right-0 bottom-0 self-end max-sm:mt-12 "
           />
         </div>
         <div className="flex justify-between w-full max-w-[1312px] max-md:px-6 px-16 py-8 border border-[#33353f] rounded-md max-sm:hidden block">

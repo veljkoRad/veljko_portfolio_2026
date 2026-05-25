@@ -1,57 +1,79 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { skills } from "@/data/skillData";
+import { skillCategories } from "@/data/skillData";
+import SectionTitle from "./UI/SectionTitle";
+
+type SkillCategory = {
+  label: string;
+  skills: Array<{ icon: React.ReactNode; title: string }>;
+};
+
+const SkillCategory = ({ category }: { category: SkillCategory }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <div>
+      <div className="flex flex-col  w-min">
+        <p className="pt-10 text-[28px] font-medium text-primary/90 whitespace-nowrap">
+          {category.label}
+        </p>
+        <div className="w-[60%] h-[3px] bg-primary/40 mt-2.5"></div>
+      </div>
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+        className="flex flex-wrap mt-[16px] gap-8 justify-start max-sm:justify-center"
+      >
+        {category.skills.map((item, index) => (
+          <motion.div
+            key={index}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, ease: "easeOut" },
+              },
+            }}
+          >
+            <div className="bg-bg-second p-2 flex items-center justify-center gap-3 rounded-lg w-[160px] cursor-pointer hover:scale-110 transition-transform duration-300">
+              {item.icon}
+              <p className="text-sm font-medium text-primary/90 text-start">
+                {item.title}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 const Skill = ({
   skillRef,
 }: {
   skillRef: React.RefObject<HTMLDivElement | null>;
 }) => {
-  const skillInView = useInView(skillRef, { once: true, margin: "-100px" });
-
   return (
-    <section className="px-6">
-      <div className=" bg-center bg-auto bg-no-repeat max-sm:bg-repeat-y container-main ">
-        <h2 className="section-title">Skill</h2>
-        <motion.div
-          ref={skillRef}
-          initial="hidden"
-          animate={skillInView ? "visible" : "hidden"}
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
-          className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 justify-between gap-7.5 mt-12.5"
-        >
-          {skills.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.5, ease: "easeOut" },
-                },
-              }}
-            >
-              <div className=" group bg-bg-second max-sm:bg-[linear-gradient(to_right,#3b82f6,#2563eb)]  w-full h-full rounded-xl cursor-pointer transition-all duration-300 ease-out hover:bg-[linear-gradient(to_right,#3b82f6,#2563eb)] hover:-translate-y-1 hover:shadow-lg hover:shadow-blue/40 px-9.75 py-13 max-xl:px-5.5 max-xl:py-8.25 font-medium  ">
-                {item.icon}
-                <h4 className="group-hover:text-white text-2xl font-semibold    text-primary/90 max-sm:text-white mt-4 max-md:text-xl ">
-                  {item.title}
-                </h4>
-                <div className="descHover text-lg group-hover:text-white text-secondary leading-7.5  max-sm:text-white mt-2 max-md:text-base ">
-                  {item.desc}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+    <section className="px-12 max-sm:px-6" ref={skillRef}>
+      <div className="container-main pb-16">
+        <h2 className="section-title">
+          <SectionTitle>Skills</SectionTitle>
+        </h2>
+        {skillCategories.map((category, catIdx) => (
+          <SkillCategory key={catIdx} category={category} />
+        ))}
       </div>
     </section>
   );

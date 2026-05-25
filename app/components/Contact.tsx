@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useForm, Controller } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
+import SectionTitle from "./UI/SectionTitle";
 
 type ContactProps = {
   contactRef: React.RefObject<HTMLDivElement | null>;
@@ -52,8 +53,11 @@ const Contact = ({ contactRef }: ContactProps) => {
   };
 
   return (
-    <section className="bg-bg-second px-6">
+    <section className="bg-bg-second px-12 max-sm:px-6 ">
       <div className="container-main max-lg:max-w-145 ">
+        <h2 className="section-title ">
+          <SectionTitle>Contact</SectionTitle>
+        </h2>
         <motion.div
           ref={contactRef}
           initial={{ opacity: 0, y: 30 }}
@@ -69,7 +73,6 @@ const Contact = ({ contactRef }: ContactProps) => {
             className=" rounded-xl  max-lg:max-w-145 max-xl:max-w-110 max-w-145 w-full h-full"
           />
           <div>
-            <h2 className="section-title">Contact Me</h2>
             <div className="text-secondary text-xl mt-2 max-lg:text-lg">
               I’m always excited to take on new projects and work with creative
               teams. Whether you have a project in mind or just want to connect,

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, ChevronLeft } from "lucide-react";
+import { ArrowRight, ChevronRight, ChevronLeft, Eye, CodeXml } from "lucide-react";
 import Image from "next/image";
 
 const ProjectCard = ({ cardData }) => {
@@ -17,7 +17,7 @@ const ProjectCard = ({ cardData }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-6 max-md:grid-cols-1 auto-rows-fr mt-12.5"
+      <div className="grid grid-cols-3 max-xl:grid-cols-2 gap-12 max-md:grid-cols-1 auto-rows-fr mt-12.5 pb-16"
       >
         {filterCard.map((item, index) => (
           <motion.div
@@ -36,38 +36,61 @@ const ProjectCard = ({ cardData }) => {
               ease: "easeOut",
             }}
           >
-            <a
-              className="relative w-full h-full max-md:max-w-full max-lg:max-w-112.5 max-w-155 flex flex-col  items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl  bg-bg-first group p-6 "
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
+              className="relative flex flex-col h-full items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl bg-bg-second"
+
             >
-              <div className="relative overflow-hidden rounded-2xl">
+              <div className=" group relative overflow-hidden rounded-t-2xl">
                 <Image
                   src={`/images/${item.image}`}
                   alt={item.name}
                   width={585}
-                  height={439}
-                  className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-300"
+                  height={376}
+                  className=" h-auto object-cover group-hover:scale-110 transition-transform duration-300 w-[448px] max-md:w-full"
                 />
-                <div className=" group-hover:flex hidden absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] justify-center items-center bg-[linear-gradient(90deg,#3b82f6,#60a5fa)] p-3  rounded-full text-white -rotate-45 transition-all duration-300 ease-in">
-                  <ArrowRight
-                    size={35}
-                  />
+                <div className=" group-hover:flex justify-center gap-2 items-center hidden absolute bg-[rgba(18,18,18,0.85)] inset-0 ">
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1 border border-[3px] border-gray  rounded-full text-gray  hover:text-white hover:border-white">
+                      <Eye
+                        size={40}
+                      />
+                    </a>)}
+                  {item.git && (
+                    <a
+                      href={item.git}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-[6px] border border-[3px] border-gray  rounded-full text-gray  hover:text-white hover:border-white">
+                      <CodeXml
+                        size={40}
+                      />
+                    </a>
+                  )}
                 </div>
+
               </div>
-              <div className="mt-6">
-                <h3 className="group-hover:text-blue text-primary/90  max-sm:text-2xl text-4xl font-semibold ">
+              <div className="px-4 py-6 flex-1 flex flex-col">
+                <h3 className="group-hover:text-blue text-primary/90 text-xl font-semibold">
                   {item.name}
                 </h3>
-                <div className="mt-4 text-secondary max-sm:text-sm max-w-[40ch]"
-                >
+                <div className="mt-2 text-primary/70 text-sm max-w-[40ch]">
                   {item.desc}
                 </div>
+                {item.icons && (
+                  <div className="flex gap-2 mt-3">
+                    {item.icons.map((icon, index) => (
+                      <img key={index} src={`/images/stackIcons/${icon}`} alt={icon} className="h-9" />
+                    ))}
+                  </div>
+                )}
               </div>
 
 
-            </a>
+            </div>
           </motion.div>
         ))}
       </div >

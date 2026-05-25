@@ -12,12 +12,15 @@ export const techStack = [
 ];
 
 export const techDesc = [
-  { title: "Front-End", desc: "Next.js, React, Typescript, HTML, CSS" },
   {
-    title: "  Interactive Design",
-    desc: "Tailwind CSS (responsive, dark/light), MaterialUi, Framer Motion, React Circular  Swiper carousels ",
+    title: "Front-End",
+    desc: "React, Next.js, Typescript, JavaScript, HTML, CSS",
   },
-  { title: "Testing & Tools", desc: "Jest, ESLint, TypeScript strict mode" },
-  { title: "Back-End & CMS", desc: " WordPress (REST API), API integrations" },
-  { title: "Deployment", desc: "Vercel, GitHub, Netlify" },
+  {
+    title: "  UI & Animation",
+    desc: "Tailwind, Material UI, Framer Motion",
+  },
+  { title: "CMS & APIs", desc: "WordPress" },
+  { title: "Deployment & Workflow", desc: "Vercel, GitHub" },
+  { title: "Languages", desc: "English, Serbian" },
 ];

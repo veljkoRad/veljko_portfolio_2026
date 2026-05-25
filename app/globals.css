@@ -82,11 +82,7 @@
   }
 
   .section-title {
-    @apply text-4xl text-center max-md:text-5xl font-extrabold text-primary;
-  }
-
-  .btn-color {
-    @apply bg-[linear-gradient(90deg,#3b82f6,#60a5fa)] hover:bg-[linear-gradient(90deg,#2563eb,#3b82f6)];
+    @apply text-4xl text-center  font-extrabold text-primary w-max m-auto;
   }
 
   .form-input {
@@ -94,7 +90,7 @@
   }
 
   .container-main {
-    @apply max-w-7xl w-full mx-auto py-30;
+    @apply max-sm:max-w-[100%] max-md:max-w-[544px] max-lg:max-w-[672px] max-xl:max-w-[1928px] max-2xl:max-w-[1184px] max-w-[1440px]   w-full mx-auto;
   }
   .tooltip {
     @apply bg-bg-first text-primary shadow-[0_4px_12px_rgba(0,0,0,0.15)];
@@ -106,6 +102,8 @@
   .sr-only {
     @apply absolute -inset-1 w-1 h-1 overflow-hidden;
   }
+
+  /* Hero Button Start */
 
   .button {
     position: relative;
@@ -176,4 +174,114 @@
       left: 100%;
     }
   }
+  /* Hero Button End */
+
+  /* About Card Start */
+
+  .card {
+    width: 555px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 14px;
+    transition: all 0.3s;
+    @apply max-2xl:max-w-[490px] max-xl:max-w-[430px] max-lg:max-w-[100%] max-lg:w-[100%];
+  }
+
+  .card2 {
+    width: 100%;
+    background: #101123;
+    border: 1px solid #2a2e5a;
+    border-radius: 14px;
+    transition: all 0.2s;
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #e5e7eb;
+  }
+
+  .card2:hover {
+    transform: scale(0.98);
+  }
+
+  .card:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+  }
+
+  /* About Card End */
+
+  .btn-color {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  }
+
+  /* About Tabs End */
+
+  /* Tab Buttons Start */
+
+  /* From Uiverse.io by srinivasaiml */
+  .pill-radio-container {
+    --main-color: #ff6ec4;
+    --secondary-color: #7873f5;
+    --text-color: #ddd;
+    --pill-bg: #1a1a1a;
+    --total-options: 8;
+
+    display: flex;
+    position: relative;
+    background: var(--pill-bg);
+    border-radius: 3rem;
+    padding: 0.5rem;
+    gap: 1rem;
+    box-shadow: 0 0 20px #000 inset;
+    width: fit-content;
+  }
+
+  .pill-radio-container input {
+    display: none;
+  }
+
+  .pill-radio-container label {
+    position: relative;
+    padding: 0.6rem 1.5rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+    z-index: 2;
+  }
+
+  .pill-radio-container input:checked + label {
+    color: #fff;
+  }
+
+  .pill-radio-container label:hover {
+    color: var(--main-color);
+  }
+
+  .pill-indicator {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    height: 4px;
+    width: calc(100% / var(--total-options));
+    background: linear-gradient(
+      to right,
+      var(--main-color),
+      var(--secondary-color)
+    );
+    border-radius: 2px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  /* Sliding effect */
+  #pill-free:checked ~ .pill-indicator {
+    transform: translateX(70%);
+  }
+  #pill-basic:checked ~ .pill-indicator {
+    transform: translateX(300%);
+  }
+  #pill-premium:checked ~ .pill-indicator {
+    transform: translateX(600%);
+  }
+
+  /* Tab Buttons End */
 }
