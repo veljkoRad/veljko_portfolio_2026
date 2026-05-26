@@ -48,7 +48,14 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
       <div className="  container-main   flex flex-col items-center gap-31.5">
         <div className="relative  w-full flex max-lg:justify-center max-sm:flex-col  ">
           <div className="relative flex flex-col justify-center z-20 w-full   ">
-            <h1 className=" max-sm:text-3xl max-md:text-5xl max-xl:text-6xl text-7xl font-extrabold btn-color bg-clip-text text-transparent">
+            <h1
+              className="max-sm:text-3xl max-md:text-5xl max-xl:text-6xl text-7xl font-extrabold bg-clip-text text-transparent"
+              style={{
+                background:
+                  "linear-gradient(90deg,rgba(59, 130, 246, 1) 0%, rgba(168, 85, 247, 1) 40%)",
+                WebkitBackgroundClip: "text",
+              }}
+            >
               Hello, I'm Veljko <br />
               <p className="max-lg:mt-0 max-xl:mt-5 mt-7 text-primary  ...">
                 {text}
@@ -60,7 +67,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
                 </motion.span>
               </p>
             </h1>
-            <p className="max-lg:mt-4 mt-9 text-secondary text-lg  max-md:text-base max-w-[60ch] max-lg:max-w-[40ch] max-xl:max-w-[55ch]   ">
+            <p className="max-lg:mt-4 mt-9 text-primary/50   text-lg  max-md:text-base max-w-[60ch] max-lg:max-w-[40ch] max-xl:max-w-[55ch]   ">
               I build fast, modern marketing websites and React/Next.js
               applications focused on performance, SEO, and clean user
               experience for startups, businesses, and digital products.
@@ -119,23 +126,22 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
             className="max-w-[500px] max-sm:max-w-[250px]  max-md:max-w-[250px] max-lg:max-w-[300px] max-xl:max-w-[360px] absolute max-sm:static right-0 bottom-0 self-end max-sm:mt-12 "
           />
         </div>
-        <div className="flex justify-between w-full max-w-[1312px] max-md:px-6 px-16 py-8 border border-[#33353f] rounded-md max-sm:hidden block">
+        <div className="flex justify-between w-full max-w-[1312px] max-md:px-6 px-16 py-8 border border-primary/20 rounded-md max-sm:hidden block">
           <div className="flex flex-col items-center">
             <p className="text-4xl font-bold">3+</p>
-            <p className="font-thin text-third max-lg:text-sm">
+            <p className="font-thin text-primary/50 max-lg:text-sm">
               Years of experience
             </p>
           </div>
           <div className="flex flex-col items-center">
             <p className="text-4xl font-bold">100+</p>
-            <p className="font-thin text-third  max-lg:text-sm">
-              {" "}
+            <p className="font-thin text-primary/50  max-lg:text-sm">
               Delivered Projects
             </p>
           </div>
           <div className="flex flex-col items-center">
             <p className="text-4xl font-bold">SEO</p>
-            <p className="font-thin text-third  max-lg:text-sm">
+            <p className="font-thin text-primary/50  max-lg:text-sm">
               Performance Focused
             </p>
           </div>

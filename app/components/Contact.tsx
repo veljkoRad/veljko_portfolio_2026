@@ -4,6 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import SectionTitle from "./UI/SectionTitle";
+import { AtSign, MapPin } from "lucide-react";
 
 type ContactProps = {
   contactRef: React.RefObject<HTMLDivElement | null>;
@@ -53,7 +54,7 @@ const Contact = ({ contactRef }: ContactProps) => {
   };
 
   return (
-    <section className="bg-bg-second px-12 max-sm:px-6 ">
+    <section className=" px-12 max-sm:px-6 ">
       <div className="container-main max-lg:max-w-145 ">
         <h2 className="section-title ">
           <SectionTitle>Contact</SectionTitle>
@@ -63,17 +64,69 @@ const Contact = ({ contactRef }: ContactProps) => {
           initial={{ opacity: 0, y: 30 }}
           animate={contactInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-start max-xl:items-center max-lg:flex-col flex-row gap-17.5"
+          className="flex items-start max-xl:items-center mt-16 pb-16 max-lg:flex-col flex-row gap-4"
         >
-          <Image
-            width={800}
-            height={845}
-            alt="Veljko Image for Contact Section"
-            src="/images/profile_veljko.jpeg"
-            className=" rounded-xl  max-lg:max-w-145 max-xl:max-w-110 max-w-145 w-full h-full"
-          />
-          <div>
-            <div className="text-secondary text-xl mt-2 max-lg:text-lg">
+          <div className="flex-1">
+            <h4 className="text-[28px] font-semibold"> E-mail </h4>
+            <div className="w-[100px] h-[3px] bg-primary/40 mt-2.5"></div>
+            <div className="flex gap-2 text-lg items-center text-blue mt-5">
+              <AtSign className="text-primary" size={40} />{" "}
+              radivojevicveljko92@gmail.com
+            </div>
+            <h4 className="text-[28px] font-semibold mt-16"> Adress </h4>
+            <div className="w-[100px] h-[3px] bg-primary/40 mt-2.5"></div>
+            <div className="flex gap-2 text-lg items-center text-blue mt-5">
+              <MapPin className="text-primary" size={40} /> Belgrade, Serbia
+            </div>
+            <h4 className="text-[28px] font-semibold mt-16"> Socials </h4>
+            <div className="w-[100px] h-[3px] bg-primary/40 mt-2.5"></div>
+            <div className="flex gap-2">
+              <div className="flex gap-6 mt-6">
+                <a
+                  href="https://github.com/veljkoRad"
+                  aria-label="Github profile"
+                >
+                  <Image
+                    priority
+                    width={42}
+                    height={42}
+                    src="/images/stackicons/github-icon.svg"
+                    alt="github icon"
+                    className=" hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/veljko-radivojevic-77a825267"
+                  aria-label="LinkedIn profile"
+                >
+                  <Image
+                    priority
+                    width={42}
+                    height={42}
+                    src="/images/stackicons/linkedin-icon.svg"
+                    alt="linkedin icon"
+                    className="rounded-md hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/veljko-radivojevic-77a825267"
+                  aria-label="LinkedIn profile"
+                >
+                  <Image
+                    priority
+                    width={42}
+                    height={42}
+                    src="/images/stackicons/insta.svg"
+                    alt="linkedin icon"
+                    className=" rounded-md hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="text-primary/50 text-xl mt-2 max-lg:text-lg">
               I’m always excited to take on new projects and work with creative
               teams. Whether you have a project in mind or just want to connect,
               feel free to reach out!
@@ -96,7 +149,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     {...field}
                     id="name"
                     placeholder="Your Name"
-                    className={`form-input ${errors.name ? "border-red" : "border-gray"} hover:border-blue`}
+                    className={`form-input ${errors.name ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -125,7 +178,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     {...field}
                     id="email"
                     placeholder="Your Email"
-                    className={`mt-5 form-input ${errors.email ? "border-red" : "border-gray"} hover:border-blue`}
+                    className={`mt-5 form-input ${errors.email ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -151,7 +204,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     {...field}
                     id="subject"
                     placeholder="Write a Subject"
-                    className={`mt-5 form-input ${errors.subject ? "border-red" : "border-gray"} hover:border-blue`}
+                    className={`mt-5 form-input ${errors.subject ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -181,7 +234,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     id="message"
                     placeholder="Your Message"
                     rows={4}
-                    className={`mt-5 form-input ${errors.message ? "border-red" : "border-gray"} hover:border-blue`}
+                    className={`mt-5 form-input ${errors.message ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />

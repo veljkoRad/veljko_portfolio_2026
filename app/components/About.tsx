@@ -30,8 +30,8 @@ const About = ({ aboutRef }: AboutTabContent) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex items-center max-lg:items-stretch justify-between gap-12 py-16  flex-row max-lg:flex-col  "
         >
-          <div>
-            <p className="text-secondary max-md:text-sm tracking-[1px] font-medium  max-w-[75ch]">
+          <div className="flex-1">
+            <p className="text-primary/50 max-md:text-sm tracking-[1px] font-medium ">
               Frontend Developer with 3 years of experience building modern
               marketing websites, landing pages, and React/Next.js applications.
               Focused on scalable UI systems, API integrations, performance, and
@@ -46,34 +46,54 @@ const About = ({ aboutRef }: AboutTabContent) => {
               <Download className="ml-2.5" />
             </a>
           </div>
-          <div className=" flex flex-col items-stretch justify-center gap-2.5">
+          <div className=" flex  flex-1 flex-col items-stretch justify-center gap-2.5 ">
             <div className=" max-md:text-sm leading-7 flex flex-col gap-6  ">
               <div className="card ">
                 <div className="card2">
-                  <p className="text-sm max-sm:text-xs font-medium text-blue text-center">
+                  <p className="text-sm max-sm:text-xs font-medium text-purple text-center">
                     Experience
                   </p>
-                  <p className="text-lg max-sm:text-base font-bold mt-4">
-                    {" "}
-                    WEB DEVELOPER / MARKETING ASSISTANT
-                  </p>
-                  <p>
-                    Fortrade <br />
-                  </p>
-                  <p className="max-sm:text-xs">2023 - Current</p>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-lg max-sm:text-base font-bold mt-4 text-primary">
+                        {" "}
+                        WEB DEVELOPER / MARKETING ASSISTANT
+                      </p>
+                      <p className="text-primary">
+                        Fortrade <br />
+                      </p>
+                      <p className="max-sm:text-xs text-primary">
+                        2023 - Current
+                      </p>
+                    </div>
+                    <img
+                      src="images/stackicons/fortrade.png"
+                      className="w-[60px] bg-transparent"
+                      alt=""
+                    />
+                  </div>
                 </div>
               </div>
               <div className="card ">
                 <div className="card2">
-                  <p className="text-sm max-sm:text-xs font-medium text-blue text-center">
+                  <p className="text-sm max-sm:text-xs font-medium text-purple text-center">
                     Education
                   </p>
-                  <p className="text-lg max-sm:text-base font-bold mt-4">
-                    {" "}
-                    BSc in Mechanical Engineering
-                  </p>
-                  <p>University of Belgrade</p>
-                  <p className="max-sm:text-xs">2018</p>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-lg max-sm:text-base font-bold mt-4 text-primary">
+                        {" "}
+                        BSc in Mechanical Engineering
+                      </p>
+                      <p className="text-primary">University of Belgrade</p>
+                      <p className="max-sm:text-xs text-primary">2018</p>
+                    </div>
+                    <img
+                      src="images/stackicons/UOB.jpg"
+                      className="w-[60px] bg-transparent"
+                      alt=""
+                    />
+                  </div>
                 </div>
               </div>
             </div>

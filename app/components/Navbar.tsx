@@ -65,7 +65,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
                     className={`font-medium transition-colors cursor-pointer duration-100 ${
                       active === item.id
                         ? "text-white"
-                        : "text-navbar-text hover:text-white"
+                        : "text-white/40 hover:text-white"
                     } `}
                   >
                     {item.label}
@@ -114,22 +114,22 @@ const Navbar = ({ active, sections }: NavbarProps) => {
         <div
           className={`absolute right-0 top-0 h-screen w-full max-w-sm bg-bg-first flex flex-col ${toggleMobile ? "translate-x-0" : "translate-x-full"} transition-transform duration-300`}
         >
-          <div className="flex items-center justify-between px-6 py-5 border-b border-gray">
+          <div className="flex items-center justify-between px-6 py-5 border-b border-white/50">
             <button
               onClick={() => {
                 scrollTop();
                 setToggleMobile(false);
               }}
-              className="text-blue text-lg font-bold leading-5 tracking-widest cursor-pointer flex-1 text-left"
+              className="text-blue logo-family text-xl font-bold leading-5 tracking-widest cursor-pointer flex-1 text-left"
             >
-              Veljko <br /> Radivojević
+              VR
             </button>
             <button
               onClick={() => setToggleMobile(false)}
               className="p-2"
               aria-label="Close navigation menu"
             >
-              <X className="text-primary w-6 h-6" />
+              <X className="text-primary/90 w-6 h-6" />
             </button>
           </div>
 
@@ -150,7 +150,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
                       });
                     }
                   }}
-                  className="w-full text-left px-8 py-2 font-medium text-primary hover:bg-bg-second transition-colors cursor-pointer"
+                  className="w-full text-left px-8 py-2 font-medium text-primary/90 hover:bg-bg-second transition-colors cursor-pointer"
                 >
                   {item.label}
                 </button>

@@ -13,14 +13,34 @@ export const techStack = [
 
 export const techDesc = [
   {
-    title: "Front-End",
-    desc: "React, Next.js, Typescript, JavaScript, HTML, CSS",
+    title: "Frontend Development",
+    desc: "Building scalable React and Next.js applications with modern frontend architecture.",
   },
+
   {
-    title: "  UI & Animation",
-    desc: "Tailwind, Material UI, Framer Motion",
+    title: "Landing Pages",
+    desc: "Creating responsive landing pages focused on conversion and user experience.",
   },
-  { title: "CMS & APIs", desc: "WordPress" },
-  { title: "Deployment & Workflow", desc: "Vercel, GitHub" },
-  { title: "Languages", desc: "English, Serbian" },
+
+  {
+    title: "Marketing Websites",
+    desc: "Developing fast and modern business websites optimized for presentation and performance.",
+  },
+];
+
+export const techDesc2 = [
+  {
+    title: "UI & Animation",
+    desc: "Designing interactive interfaces with smooth animations and reusable components.",
+  },
+
+  {
+    title: "CMS & APIs",
+    desc: "Integrating WordPress CMS, REST APIs, and dynamic frontend content systems.",
+  },
+
+  {
+    title: "Performance & SEO",
+    desc: "Focused on accessibility, SEO, fast loading speeds, and production-ready code.",
+  },
 ];

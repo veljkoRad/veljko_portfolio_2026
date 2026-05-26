@@ -22,10 +22,3 @@ My personal portfolio. I came from marketing — three years at Fortrade buildin
 npm install
 npm run dev
 ```
-
-## Project Section
-
-1. Fix radio butons
-2. Fix project description
-3. Fix Paginations and it's design
-4. Add All tab for best all projects

@@ -16,7 +16,7 @@ const SkillCategory = ({ category }: { category: SkillCategory }) => {
   return (
     <div>
       <div className="flex flex-col  w-min">
-        <p className="pt-10 text-[28px] font-medium text-primary/90 whitespace-nowrap">
+        <p className="pt-16 text-[28px] max-sm:text-[22px] max- font-medium text-primary/90 whitespace-nowrap">
           {category.label}
         </p>
         <div className="w-[60%] h-[3px] bg-primary/40 mt-2.5"></div>
@@ -33,7 +33,7 @@ const SkillCategory = ({ category }: { category: SkillCategory }) => {
             transition: { staggerChildren: 0.2 },
           },
         }}
-        className="flex flex-wrap mt-[16px] gap-8 justify-start max-sm:justify-center"
+        className="flex flex-wrap mt-4 max-sm:mt-8 gap-8 justify-start max-sm:justify-center"
       >
         {category.skills.map((item, index) => (
           <motion.div

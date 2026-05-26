@@ -5,41 +5,34 @@
   --color-*: initial;
 
   --color-primary: var(--c-primary);
-  --color-secondary: #747474;
-  --color-third: #8f8f92;
-  --color-gray: var(--c-gray);
   --color-bg-first: var(--c-bg);
   --color-bg-second: var(--c-bg-sn);
   --color-blue: var(--c-blue);
+  --color-purple: var(--c-purple);
   --color-white: #fff;
   --color-red: #fb2c36;
   --color-navbar: var(--c-navbar);
-  --color-navbar-text: var(--c-navbar-text);
-
+  --color-card: var(--c-card);
   --breakpoint-xs: 400px;
 }
 
 :root[data-theme="light"] {
   --c-primary: #1f1f24;
-  --c-bg: rgb(238, 241, 245);
-  --c-bg-sn: rgb(238, 241, 245);
-  --c-gray: #8f8f92;
+  --c-bg: #eef1f5;
+  --c-bg-sn: #cfdef5;
   --c-blue: #3b82f6;
-  --c-hero:
-    linear-gradient(rgba(238, 241, 245, 0.55), rgba(238, 241, 245, 0.55)),
-    url("/images/crissxcross.png");
+  --c-purple: #a855f7;
   --c-navbar: #3b82f6;
-  --c-navbar-text: #7ab7fc;
+  --c-card: #cfdef5;
 }
 :root[data-theme="dark"] {
   --c-primary: #ffffff;
   --c-bg: #121212;
   --c-bg-sn: #1f1f24;
-  --c-gray: #8f8f92;
   --c-blue: #3b82f6;
-  --c-hero: url("/images/crissxcross.png");
-  --c-navbar: #272730;
-  --c-navbar-text: #8f8f92;
+  --c-purple: #a855f7;
+  --c-navbar: #1f1f24;
+  --c-card: #101123;
 }
 
 @layer base {
@@ -179,22 +172,21 @@
   /* About Card Start */
 
   .card {
-    width: 555px;
-    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    width: 100%;
+    background-image: linear-gradient(163deg, #a855f7 0%, #3b82f6 100%);
     border-radius: 14px;
     transition: all 0.3s;
-    @apply max-2xl:max-w-[490px] max-xl:max-w-[430px] max-lg:max-w-[100%] max-lg:w-[100%];
   }
 
   .card2 {
     width: 100%;
-    background: #101123;
     border: 1px solid #2a2e5a;
     border-radius: 14px;
     transition: all 0.2s;
     padding: 12px 20px;
     cursor: pointer;
     color: #e5e7eb;
+    @apply bg-card;
   }
 
   .card2:hover {
@@ -215,21 +207,17 @@
 
   /* Tab Buttons Start */
 
-  /* From Uiverse.io by srinivasaiml */
   .pill-radio-container {
-    --main-color: #ff6ec4;
-    --secondary-color: #7873f5;
-    --text-color: #ddd;
-    --pill-bg: #1a1a1a;
+    --text-color: #fff;
+    --pill-bg: var(--c-bg-sn);
     --total-options: 8;
 
     display: flex;
     position: relative;
     background: var(--pill-bg);
-    border-radius: 3rem;
-    padding: 0.5rem;
+    border-radius: 30px;
+    padding: 8px;
     gap: 1rem;
-    box-shadow: 0 0 20px #000 inset;
     width: fit-content;
   }
 
@@ -240,7 +228,6 @@
   .pill-radio-container label {
     position: relative;
     padding: 0.6rem 1.5rem;
-    border-radius: 3rem;
     cursor: pointer;
     font-weight: 600;
     color: var(--text-color);
@@ -258,29 +245,27 @@
 
   .pill-indicator {
     position: absolute;
-    bottom: 5px;
+    bottom: 0;
     left: 0;
     height: 4px;
     width: calc(100% / var(--total-options));
-    background: linear-gradient(
-      to right,
-      var(--main-color),
-      var(--secondary-color)
-    );
     border-radius: 2px;
     transition: transform 0.3s ease-in-out;
     z-index: 1;
   }
 
   /* Sliding effect */
-  #pill-free:checked ~ .pill-indicator {
-    transform: translateX(70%);
+  #pill-all:checked ~ .pill-indicator {
+    transform: translateX(30%);
   }
-  #pill-basic:checked ~ .pill-indicator {
-    transform: translateX(300%);
+  #pill-react:checked ~ .pill-indicator {
+    transform: translateX(210%);
   }
-  #pill-premium:checked ~ .pill-indicator {
-    transform: translateX(600%);
+  #pill-landing:checked ~ .pill-indicator {
+    transform: translateX(430%);
+  }
+  #pill-email:checked ~ .pill-indicator {
+    transform: translateX(650%);
   }
 
   /* Tab Buttons End */

@@ -1,9 +1,10 @@
 "use client";
 import { RefObject } from "react";
 import { motion, useInView } from "framer-motion";
-import { techStack, techDesc } from "@/data/toolsData";
+import { techStack, techDesc, techDesc2 } from "@/data/toolsData";
 import Image from "next/image";
 import SectionTitle from "./UI/SectionTitle";
+import { CircleGauge, CodeXml } from "lucide-react";
 
 type ToolsProps = {
   toolsRef: RefObject<HTMLDivElement | null>;
@@ -13,9 +14,9 @@ const Tools = ({ toolsRef }: ToolsProps) => {
 
   return (
     <section className=" px-12 max-sm:px-6 ">
-      <div className="container-main">
+      <div className="container-main pb-16">
         <h2 className="section-title ">
-          <SectionTitle>Tools</SectionTitle>
+          <SectionTitle>Expertise</SectionTitle>
         </h2>
         <motion.div
           ref={toolsRef}
@@ -26,89 +27,85 @@ const Tools = ({ toolsRef }: ToolsProps) => {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mt-16 flex  max-lg:flex-col max-lg:gap-10 flex-row"
+          className="mt-16 flex justify-center  max-lg:flex-col max-lg:gap-10 gap-[64px] "
         >
-          {/* Left Div Start */}
-          <div className="flex flex-col justify-center gap-10 fled-[1 1 0] min-w-0 items-center max-md:mx-0 mx-13 ">
-            <div className="overflow-x-clip overflow-y-visible max-w-134.75 w-full  ">
-              <motion.div
-                className="flex gap-8 w-max pr-8 "
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
-                {/* Array of 10 items - first 5 items x 2 */}
-                {[...techStack.slice(0, 5), ...techStack.slice(0, 5)].map(
-                  (item, i) => (
-                    <div key={i} className=" group relative">
-                      <div className="tooltip group-hover:opacity-100 group-hover:translate-y-0;">
-                        {item.name}
-                      </div>
-                      <div className="bg-bg-second rounded-xl w-20 h-20 flex items-center justify-center transition-all duration-300 ease-in border border-blue/20 hover:border-blue">
-                        <Image
-                          alt={item.name}
-                          src={item.icon}
-                          width={40}
-                          height={40}
-                          className="h-10 w-auto"
-                        />
-                      </div>
-                    </div>
-                  ),
-                )}
-              </motion.div>
-            </div>
-            <div className="overflow-x-clip overflow-y-visible max-w-134.75 w-full ">
-              <motion.div
-                className="flex gap-8 w-max pr-8"
-                animate={{ x: ["-50%", "0%"] }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
-                {[...techStack.slice(5, 10), ...techStack.slice(5, 10)].map(
-                  (item, i) => (
-                    <div key={i} className="relative group tabIndex={0}">
-                      <div className="tooltip group-hover:opacity-100 group-hover:translate-y-0; focus-within:opacity-100 focus-within:translate-y-0">
-                        {item.name}
-                      </div>
-                      <div className="bg-bg-second rounded-xl w-20 h-20 flex items-center justify-center transition-all duration-300 ease-in border border-blue/40 hover:border-blue">
-                        <Image
-                          alt={item.name}
-                          src={item.icon}
-                          width={40}
-                          height={40}
-                          className="h-10 w-auto"
-                        />
-                      </div>
-                    </div>
-                  ),
-                )}
-              </motion.div>
-            </div>
+          {/* Left Div 1 Start */}
+          <div className="max-w-[689px] w-full flex justify-center ">
+            <img
+              src="/images/expertise.svg"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full max-h-[474px]    max-xl:h-120 max-md:h-100 max-sm:h-80"
+            />
           </div>
-          {/* Left Div End */}
 
-          {/* Right Div Start */}
-          <div className="flex-[1-1-0] min-w-0 m-auto  max-lg:border-none border-l border-l-secondary">
-            <ul className="p-0 list-disc pl-6 max-md:mx-0 mx-11 flex flex-col gap-6 ">
-              {techDesc.map((item) => (
-                <li
-                  key={item.title}
-                  className="list-disc pl-1 text-xl max-sm:text-base max-w-[45ch] font-semibold"
-                >
-                  {item.title}:{" "}
-                  <span className="text-secondary"> {item.desc}</span>
-                </li>
+          {/* Left Div 1 End */}
+
+          {/* Right Div 1 Start */}
+          <div>
+            <div className="  flex flex-col gap-6 ">
+              {techDesc.map((item, index) => (
+                <div className="card " key={index}>
+                  <div className="card2 p-8">
+                    <p className="text-xl font-medium  text-purple ">
+                      {item.title}
+                    </p>
+                    <p className="text-md max-sm:text-base  mt-2 text-primary">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-          {/* Right Div End */}
+          {/* Right Div 1 End */}
+        </motion.div>
+        <motion.div
+          ref={toolsRef}
+          initial="hidden"
+          animate={toolsInView ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mt-[96px] flex justify-between  max-lg:flex-col max-lg:gap-10 "
+        >
+          {/* Left Div 2 Start */}
+
+          <div>
+            <div className="  flex flex-col gap-6 ">
+              {techDesc2.map((item, index) => (
+                <div className="card " key={index}>
+                  <div className="card2 p-8 bg-card">
+                    <p className="text-xl font-medium  text-purple ">
+                      {item.title}
+                    </p>
+                    <p className="text-md max-sm:text-base  mt-2 text-primary  ">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Left Div 2 End */}
+
+          {/* Right Div 2 Start */}
+          <div className="max-w-[689px] w-full flex justify-center ">
+            <img
+              src="/images/expertise_2.svg"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full max-w-[490px]   h-[367px] max-xl:h-120 max-md:h-100 max-sm:h-80"
+            />
+          </div>
+          {/* Right Div 2 End */}
         </motion.div>
       </div>
     </section>
