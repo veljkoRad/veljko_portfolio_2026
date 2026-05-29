@@ -125,19 +125,20 @@ const Contact = ({ contactRef }: ContactProps) => {
               </div>
             </div>
           </div>
-          <div className="flex-1">
-            <div className="text-primary/50 text-xl mt-2 max-lg:text-lg">
-              I’m always excited to take on new projects and work with creative
-              teams. Whether you have a project in mind or just want to connect,
-              feel free to reach out!
-            </div>
+          <div
+            className="flex-1 border border-white/20 rounded-[20px] p-10 shadow-2xl flex flex-col items-center max-lg:mt-12"
+            style={{ background: "linear-gradient(135deg, #ffffff1a, #fff0)" }}
+          >
             <form
-              className="mt-12.5 flex flex-col "
+              className=" flex flex-col items-start max-w-[300px] "
               onSubmit={handleSubmit(onSubmit)}
               noValidate
             >
               {/* Name */}
-              <label htmlFor="name" className="sr-only">
+              <label
+                htmlFor="name"
+                className="font-semibold text-primary/50 mb-2"
+              >
                 Your Name
               </label>
               <Controller
@@ -148,8 +149,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                   <input
                     {...field}
                     id="name"
-                    placeholder="Your Name"
-                    className={`form-input ${errors.name ? "border-red" : "border-primary/50"} hover:border-blue`}
+                    className={` form-input ${errors.name ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -160,7 +160,10 @@ const Contact = ({ contactRef }: ContactProps) => {
               )}
 
               {/* Email */}
-              <label htmlFor="email" className="sr-only">
+              <label
+                htmlFor="email"
+                className="mt-5 mb-2 font-semibold text-primary/50"
+              >
                 Your Email
               </label>
               <Controller
@@ -177,8 +180,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                   <input
                     {...field}
                     id="email"
-                    placeholder="Your Email"
-                    className={`mt-5 form-input ${errors.email ? "border-red" : "border-primary/50"} hover:border-blue`}
+                    className={` form-input ${errors.email ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -189,7 +191,10 @@ const Contact = ({ contactRef }: ContactProps) => {
               )}
 
               {/* Subject */}
-              <label htmlFor="subject" className="sr-only">
+              <label
+                htmlFor="subject"
+                className="mt-5 mb-2 font-semibold text-primary/50"
+              >
                 Subject
               </label>
               <Controller
@@ -203,8 +208,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                   <input
                     {...field}
                     id="subject"
-                    placeholder="Write a Subject"
-                    className={`mt-5 form-input ${errors.subject ? "border-red" : "border-primary/50"} hover:border-blue`}
+                    className={` form-input ${errors.subject ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -215,8 +219,11 @@ const Contact = ({ contactRef }: ContactProps) => {
               )}
 
               {/* Message */}
-              <label htmlFor="message" className="sr-only">
-                Message
+              <label
+                htmlFor="message"
+                className="mt-5 mb-2 font-semibold text-primary/50"
+              >
+                Message:
               </label>
               <Controller
                 name="message"
@@ -232,9 +239,8 @@ const Contact = ({ contactRef }: ContactProps) => {
                   <textarea
                     {...field}
                     id="message"
-                    placeholder="Your Message"
                     rows={4}
-                    className={`mt-5 form-input ${errors.message ? "border-red" : "border-primary/50"} hover:border-blue`}
+                    className={` w-full h-[50px]  form-input ${errors.message ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -243,13 +249,15 @@ const Contact = ({ contactRef }: ContactProps) => {
                   {errors.message.message}
                 </span>
               )}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="mt-5 btn-color text-white w-47.5 h-15 rounded-2xl uppercase font-semibold cursor-pointer"
-              >
-                {isSubmitting ? "sending..." : "Send Message"}
-              </button>
+              <div className="w-full">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="mt-5 mx-auto button max-w-[200px] mt-6"
+                >
+                  {isSubmitting ? "sending..." : "Send Message"}
+                </button>
+              </div>
             </form>
           </div>
         </motion.div>

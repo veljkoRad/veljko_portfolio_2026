@@ -37,10 +37,10 @@ const ProjectCard = ({ cardData }) => {
             }}
           >
             <div
-              className="relative flex flex-col h-full items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl bg-bg-second"
+              className="relative flex flex-col h-full items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl bg-bg-second pb-6"
 
             >
-              <div className=" group relative overflow-hidden rounded-t-2xl">
+              <div className=" group relative overflow-hidden rounded-t-2xl ">
                 <Image
                   src={`/images/${item.image}`}
                   alt={item.name}
@@ -71,25 +71,25 @@ const ProjectCard = ({ cardData }) => {
                     </a>
                   )}
                 </div>
-
               </div>
-              <div className="px-4 py-6 flex-1 flex flex-col">
+              <div className="px-4 pt-6 flex-1 flex flex-col">
                 <h3 className="group-hover:text-blue text-primary/90 text-xl font-semibold">
                   {item.name}
                 </h3>
-                <div className="mt-2 text-primary/50 text-sm max-w-[40ch]">
+                <div className="mt-2 text-primary/50 text-base max-w-[40ch]">
                   {item.desc}
                 </div>
-                {item.icons && (
-                  <div className="flex gap-2 mt-3">
-                    {item.icons.map((icon, index) => (
-                      <img key={index} src={`/images/stackIcons/${icon}`} alt={icon} className="h-9" />
-                    ))}
-                  </div>
-                )}
+
+
               </div>
 
-
+              {item.icons && (
+                <div className="flex gap-2 mt-3 px-4">
+                  {item.icons.map((icon, index) => (
+                    <img key={index} src={`/images/stackIcons/${icon}`} alt={icon} className="h-9" />
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         ))}

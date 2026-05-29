@@ -2,14 +2,14 @@ export const allProjectList = [
   {
     name: "Portfolio ",
     image: "portfolio.png",
-    desc: "Modern movie and show discovery platform built with TMDB data.",
+    desc: "Personal responsive portfolio with modern UI animations to showcase experience.",
     git: "https://github.com/veljkoRad/veljko_portfolio_2026",
     icons: ["next.png", "typescript.png", "tailwind.svg"],
   },
   {
     name: "Movie Database ",
     image: "movie_app_bg.png",
-    desc: "Modern movie and show discovery platform built with TMDB data.",
+    desc: "Movie and TV discovery platform using TMDB API.",
     link: "https://movie-app-gules-eight.vercel.app/",
     git: "https://github.com/veljkoRad/movie_app",
     icons: ["next.png", "typescript.png", "tailwind.svg"],

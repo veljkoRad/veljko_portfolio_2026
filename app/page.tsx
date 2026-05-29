@@ -6,7 +6,8 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Skill from "./components/Skill";
 import Projects from "./components/Projects";
-import Tools from "./components/Tools";
+import Build from "./components/Build";
+import Expertise from "./components/Expertise";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/UI/LoadingScreen";
@@ -22,7 +23,8 @@ export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
-  const toolsRef = useRef<HTMLDivElement>(null);
+  const buildRef = useRef<HTMLDivElement>(null);
+  const expertiseRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   // SCROLL Y ACTIVE SECTION START
@@ -34,7 +36,8 @@ export default function Home() {
       { id: "about", label: "About", ref: aboutRef },
       { id: "skill", label: "Skills", ref: skillRef },
       { id: "projects", label: "Projects", ref: projectRef },
-      { id: "tools", label: "Tools", ref: toolsRef },
+      { id: "build", label: "Build", ref: buildRef },
+      { id: "expertise", label: "Expertise", ref: expertiseRef },
       { id: "contact", label: "Contact", ref: contactRef },
     ],
     [],
@@ -89,7 +92,8 @@ export default function Home() {
               <About aboutRef={aboutRef} />
               <Skill skillRef={skillRef} />
               <Projects projectRef={projectRef} />
-              <Tools toolsRef={toolsRef} />
+              <Build buildRef={buildRef} />
+              <Expertise expertiseRef={expertiseRef} />
               <Contact contactRef={contactRef} />
             </main>
             <Footer />

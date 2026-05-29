@@ -4,6 +4,23 @@ import { motion, useInView } from "framer-motion";
 import { Download } from "lucide-react";
 import SectionTitle from "./UI/SectionTitle";
 
+const aboutCards = [
+  {
+    name: "Experience",
+    title: "WEB DEVELOPER / MARKETING ASSISTANT",
+    desc: "Fortrade",
+    year: "2023 - Current",
+    img: "fortrade.png",
+  },
+  {
+    name: "Education",
+    title: "BSc in Mechanical Engineering",
+    desc: "University of Belgrade",
+    year: "2018",
+    img: "UOB.jpg",
+  },
+];
+
 type AboutTabContent = {
   aboutRef: RefObject<HTMLDivElement | null>;
 };
@@ -30,7 +47,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex items-center max-lg:items-stretch justify-between gap-12 py-16  flex-row max-lg:flex-col  "
         >
-          <div className="flex-1">
+          <div className="flex-6">
             <p className="text-primary/50 max-md:text-sm tracking-[1px] font-medium ">
               Frontend Developer with 3 years of experience building modern
               marketing websites, landing pages, and React/Next.js applications.
@@ -46,56 +63,33 @@ const About = ({ aboutRef }: AboutTabContent) => {
               <Download className="ml-2.5" />
             </a>
           </div>
-          <div className=" flex  flex-1 flex-col items-stretch justify-center gap-2.5 ">
+          <div className=" flex  flex-5 flex-col items-stretch justify-center gap-2.5 ">
             <div className=" max-md:text-sm leading-7 flex flex-col gap-6  ">
-              <div className="card ">
-                <div className="card2">
-                  <p className="text-sm max-sm:text-xs font-medium text-purple text-center">
-                    Experience
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-lg max-sm:text-base font-bold mt-4 text-primary">
-                        {" "}
-                        WEB DEVELOPER / MARKETING ASSISTANT
-                      </p>
-                      <p className="text-primary">
-                        Fortrade <br />
-                      </p>
-                      <p className="max-sm:text-xs text-primary">
-                        2023 - Current
-                      </p>
+              {aboutCards.map((item, index) => (
+                <div className="card " key={index}>
+                  <div className="card2">
+                    <p className="text-sm max-sm:text-xs font-medium text-purple text-center">
+                      {item.name}
+                    </p>
+                    <div className="flex justify-between items-center gap-8">
+                      <div>
+                        <p className="text-lg max-sm:text-base font-bold mt-4 text-primary">
+                          {item.title}
+                        </p>
+                        <p className="text-primary">{item.desc}</p>
+                        <p className="max-sm:text-xs text-primary">
+                          {item.year}
+                        </p>
+                      </div>
+                      <img
+                        src={`images/stackicons/${item.img}`}
+                        className="w-[60px] max-sm:w-[45px] bg-transparent"
+                        alt=""
+                      />
                     </div>
-                    <img
-                      src="images/stackicons/fortrade.png"
-                      className="w-[60px] bg-transparent"
-                      alt=""
-                    />
                   </div>
                 </div>
-              </div>
-              <div className="card ">
-                <div className="card2">
-                  <p className="text-sm max-sm:text-xs font-medium text-purple text-center">
-                    Education
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-lg max-sm:text-base font-bold mt-4 text-primary">
-                        {" "}
-                        BSc in Mechanical Engineering
-                      </p>
-                      <p className="text-primary">University of Belgrade</p>
-                      <p className="max-sm:text-xs text-primary">2018</p>
-                    </div>
-                    <img
-                      src="images/stackicons/UOB.jpg"
-                      className="w-[60px] bg-transparent"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </motion.div>

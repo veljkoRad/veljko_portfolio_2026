@@ -79,7 +79,7 @@
   }
 
   .form-input {
-    @apply border rounded-lg px-3 py-3.5;
+    @apply bg-bg-second  border border-bg-second rounded-lg px-3 py-2.5 focus:border-blue focus:outline-none;
   }
 
   .container-main {
@@ -90,10 +90,6 @@
     @apply px-3 py-2 rounded-xl whitespace-nowrap font-semibold text-sm;
     @apply absolute bottom-full left-[50%] -translate-x-0.5;
     @apply opacity-0 -translate-y-1.25 transition-all duration-200 ease-in z-10;
-  }
-
-  .sr-only {
-    @apply absolute -inset-1 w-1 h-1 overflow-hidden;
   }
 
   /* Hero Button Start */
