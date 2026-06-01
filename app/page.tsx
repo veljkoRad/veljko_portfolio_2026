@@ -55,7 +55,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.2 },
+      { threshold: 0, rootMargin: "-40% 0px -40% 0px" },
     );
 
     navSections.forEach((s) => {
