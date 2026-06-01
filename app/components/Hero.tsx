@@ -104,16 +104,15 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
 
             <div className="flex items-center max-md:items-start gap-4 mt-8 flex-row max-md:flex-col font-bold">
               <button
-                className="button"
                 onClick={() =>
                   projectRef.current?.scrollIntoView({
                     behavior: "smooth",
                     block: "start",
                   })
                 }
+                className="btn flex items-center gap-2 justify-center gradient"
               >
-                My Work
-                <ArrowRight />
+                My Work <ArrowRight />
               </button>
             </div>
           </div>

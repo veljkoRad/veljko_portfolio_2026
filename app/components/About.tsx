@@ -54,9 +54,17 @@ const About = ({ aboutRef }: AboutTabContent) => {
               Focused on scalable UI systems, API integrations, performance, and
               clean user experiences for digital products and businesses
             </p>
-            <a className="button max-w-50 mt-6 " href="/cv_2026.pdf" download>
+            {/* <a className="button max-w-50 mt-6 " href="/cv_2026.pdf" download>
               Download CV
               <Download className="ml-2.5" />
+            </a> */}
+            <a
+              className="btn flex items-center gap-2 justify-center gradient mt-8 "
+              href="/cv_2026.pdf"
+              download
+            >
+              Download CV
+              <Download />
             </a>
           </div>
           <div className=" flex  flex-5 flex-col items-stretch justify-center gap-2.5 ">
@@ -64,7 +72,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
               {aboutCards.map((item, index) => (
                 <div className="card " key={index}>
                   <div className="card2 shadow-xl">
-                    <p className="text-sm max-sm:text-xs font-medium text-purple text-center">
+                    <p className="text-sm max-sm:text-xs font-medium text-blue text-center">
                       {item.name}
                     </p>
                     <div className="flex justify-between items-center gap-8">

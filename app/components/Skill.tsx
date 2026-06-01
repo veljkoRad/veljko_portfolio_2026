@@ -19,7 +19,7 @@ const SkillCategory = ({ category }: { category: SkillCategory }) => {
         <p className="pt-16 text-[28px] max-sm:text-[22px] max- font-medium text-primary/90 whitespace-nowrap">
           {category.label}
         </p>
-        <div className="w-[60%] h-0.75 bg-primary/40 mt-2.5"></div>
+        <div className="w-[60%] h-0.75 bg-primary/40 mt-2.5 rounded-full"></div>
       </div>
       <motion.div
         ref={ref}

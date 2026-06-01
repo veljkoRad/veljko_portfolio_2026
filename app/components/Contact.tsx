@@ -68,18 +68,18 @@ const Contact = ({ contactRef }: ContactProps) => {
         >
           <div className="flex-1">
             <h4 className="text-[28px] font-semibold"> E-mail </h4>
-            <div className="w-25 h-0.75 bg-primary/40 mt-2.5"></div>
+            <div className="w-25 h-0.75 bg-primary/40 mt-2.5 rounded-full"></div>
             <div className="flex gap-2 text-lg items-center text-blue mt-5">
               <AtSign className="text-primary" size={40} />{" "}
               radivojevicveljko92@gmail.com
             </div>
             <h4 className="text-[28px] font-semibold mt-16"> Adress </h4>
-            <div className="w-25 h-0.75 bg-primary/40 mt-2.5"></div>
+            <div className="w-25 h-0.75 bg-primary/40 mt-2.5 rounded-full"></div>
             <div className="flex gap-2 text-lg items-center text-blue mt-5">
               <MapPin className="text-primary" size={40} /> Belgrade, Serbia
             </div>
             <h4 className="text-[28px] font-semibold mt-16"> Socials </h4>
-            <div className="w-25 h-0.75 bg-primary/40 mt-2.5"></div>
+            <div className="w-25 h-0.75 bg-primary/40 mt-2.5 rounded-full"></div>
             <div className="flex gap-2">
               <div className="flex gap-6 mt-6">
                 <a
@@ -249,11 +249,11 @@ const Contact = ({ contactRef }: ContactProps) => {
                   {errors.message.message}
                 </span>
               )}
-              <div className="w-full">
+              <div className="w-full mt-8">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className=" mx-auto button max-w-50 mt-6"
+                  className=" btn flex items-center gap-2 justify-center gradient"
                 >
                   {isSubmitting ? "sending..." : "Send Message"}
                 </button>

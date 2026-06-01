@@ -37,7 +37,7 @@ const Expertise = ({ expertiseRef }: expertiseProps) => {
               {techDesc2.map((item, index) => (
                 <div className="card " key={index}>
                   <div className="card2 p-8 bg-card shadow-xl">
-                    <p className="text-xl font-medium  text-purple ">
+                    <p className="text-xl font-medium  text-blue ">
                       {item.title}
                     </p>
                     <p className="text-md max-sm:text-base  mt-2 text-primary  ">

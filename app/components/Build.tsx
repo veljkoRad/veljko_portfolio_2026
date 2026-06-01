@@ -47,7 +47,7 @@ const Build = ({ buildRef }: BuildProps) => {
               {techDesc.map((item, index) => (
                 <div className="card " key={index}>
                   <div className="card2 p-8 shadow-xl">
-                    <p className="text-xl font-medium  text-purple ">
+                    <p className="text-xl font-medium  text-blue ">
                       {item.title}
                     </p>
                     <p className="text-md max-sm:text-base  mt-2 text-primary">
