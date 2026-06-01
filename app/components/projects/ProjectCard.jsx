@@ -50,7 +50,7 @@ const ProjectCard = ({ cardData }) => {
                   alt={item.name}
                   width={585}
                   height={376}
-                  className=" h-auto object-cover group-hover:scale-110 transition-transform duration-300 w-md max-xl:w-full"
+                  className="  object-cover group-hover:scale-110 transition-transform duration-300 w-[585px]"
                 />
                 <div className={`${activeCard === index ? "flex" : "hidden group-hover:flex"} justify-center gap-2 items-center absolute bg-[rgba(18,18,18,0.85)] inset-0`}>
                   {item.link && (
