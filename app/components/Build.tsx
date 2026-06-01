@@ -34,7 +34,7 @@ const Build = ({ buildRef }: BuildProps) => {
           <div className="flex-1 w-full flex justify-center ">
             <img
               src="/images/expertise.svg"
-              alt="expertise illustration"
+              alt="expertise"
               className="h-full max-h-118.5 max-xl:max-h-105    max-xl:h-120 max-md:h-100 max-sm:h-80"
             />
           </div>

@@ -68,18 +68,18 @@ const Contact = ({ contactRef }: ContactProps) => {
         >
           <div className="flex-1">
             <h4 className="text-[28px] font-semibold"> E-mail </h4>
-            <div className="w-[100px] h-[3px] bg-primary/40 mt-2.5"></div>
+            <div className="w-25 h-0.75 bg-primary/40 mt-2.5"></div>
             <div className="flex gap-2 text-lg items-center text-blue mt-5">
               <AtSign className="text-primary" size={40} />{" "}
               radivojevicveljko92@gmail.com
             </div>
             <h4 className="text-[28px] font-semibold mt-16"> Adress </h4>
-            <div className="w-[100px] h-[3px] bg-primary/40 mt-2.5"></div>
+            <div className="w-25 h-0.75 bg-primary/40 mt-2.5"></div>
             <div className="flex gap-2 text-lg items-center text-blue mt-5">
               <MapPin className="text-primary" size={40} /> Belgrade, Serbia
             </div>
             <h4 className="text-[28px] font-semibold mt-16"> Socials </h4>
-            <div className="w-[100px] h-[3px] bg-primary/40 mt-2.5"></div>
+            <div className="w-25 h-0.75 bg-primary/40 mt-2.5"></div>
             <div className="flex gap-2">
               <div className="flex gap-6 mt-6">
                 <a
@@ -90,7 +90,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     priority
                     width={42}
                     height={42}
-                    src="/images/stackicons/github-icon.svg"
+                    src="/images/stackIcons/github-icon.svg"
                     alt="github icon"
                     className=" hover:scale-110 transition-transform duration-300"
                   />
@@ -104,7 +104,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     priority
                     width={42}
                     height={42}
-                    src="/images/stackicons/linkedin-icon.svg"
+                    src="/images/stackIcons/linkedin-icon.svg"
                     alt="linkedin icon"
                     className="rounded-md hover:scale-110 transition-transform duration-300"
                   />
@@ -117,7 +117,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     priority
                     width={42}
                     height={42}
-                    src="/images/stackicons/insta.svg"
+                    src="/images/stackIcons/insta.svg"
                     alt="linkedin icon"
                     className=" rounded-md hover:scale-110 transition-transform duration-300"
                   />
@@ -130,7 +130,7 @@ const Contact = ({ contactRef }: ContactProps) => {
             style={{ background: "linear-gradient(135deg, #ffffff1a, #fff0)" }}
           >
             <form
-              className=" flex flex-col items-start max-w-[300px] "
+              className=" flex flex-col items-start max-w-75 "
               onSubmit={handleSubmit(onSubmit)}
               noValidate
             >
@@ -240,7 +240,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     {...field}
                     id="message"
                     rows={4}
-                    className={` w-full h-[50px]  form-input ${errors.message ? "border-red" : "border-primary/50"} hover:border-blue`}
+                    className={` w-full h-12.5  form-input ${errors.message ? "border-red" : "border-primary/50"} hover:border-blue`}
                   />
                 )}
               />
@@ -253,7 +253,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-5 mx-auto button max-w-[200px] mt-6"
+                  className=" mx-auto button max-w-50 mt-6"
                 >
                   {isSubmitting ? "sending..." : "Send Message"}
                 </button>

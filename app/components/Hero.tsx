@@ -81,7 +81,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
                   priority
                   width={42}
                   height={42}
-                  src="/images/stackicons/github-icon.svg"
+                  src="/images/stackIcons/github-icon.svg"
                   alt="github icon"
                   className=" hover:scale-110 transition-transform duration-300"
                 />
@@ -95,7 +95,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
                   priority
                   width={42}
                   height={42}
-                  src="/images/stackicons/linkedin-icon.svg"
+                  src="/images/stackIcons/linkedin-icon.svg"
                   alt="linkedin icon"
                   className="rounded-md hover:scale-110 transition-transform duration-300"
                 />
@@ -123,10 +123,10 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
             height={573}
             src="/images/hero_image.svg"
             alt="profile contact veljko"
-            className="max-w-[500px] max-sm:max-w-[250px]  max-md:max-w-[250px] max-lg:max-w-[300px] max-xl:max-w-[360px] absolute max-sm:static right-0 bottom-0 self-end max-sm:mt-12 "
+            className="max-w-125 max-sm:max-w-62.5  max-md:max-w-62.5 max-lg:max-w-75 max-xl:max-w-90 absolute max-sm:static right-0 bottom-0 self-end max-sm:mt-12 "
           />
         </div>
-        <div className="flex justify-between w-full max-w-[1312px] max-md:px-6 px-16 py-8 border border-primary/20 rounded-md max-sm:hidden block">
+        <div className="flex justify-between w-full max-w-328 max-md:px-6 px-16 py-8 border border-primary/20 rounded-md max-sm:hidden">
           <div className="flex flex-col items-center">
             <p className="text-4xl font-bold">3+</p>
             <p className="font-thin text-primary/50 max-lg:text-sm">

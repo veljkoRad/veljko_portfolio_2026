@@ -53,12 +53,9 @@ const Expertise = ({ expertiseRef }: expertiseProps) => {
 
           {/* Right Div Start */}
           <div className=" flex-1  w-full flex justify-center ">
-            <video
+            <img
               src="/images/expertise_2.svg"
-              autoPlay
-              loop
-              muted
-              playsInline
+              alt="expertise"
               className="w-full h-91.75 max-xl:h-80 max-md:h-100 max-sm:h-80"
             />
           </div>

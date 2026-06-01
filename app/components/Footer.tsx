@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className=" px-12 border-t border-primary/10">
-      <div className="max-w-[1440px] w-full flex  max-sm:flex-col items-center justify-between  gap-10 py-12 text-primary mx-auto font-medium">
+      <div className="max-w-360 w-full flex  max-sm:flex-col items-center justify-between  gap-10 py-12 text-primary mx-auto font-medium">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="cursor-pointer"

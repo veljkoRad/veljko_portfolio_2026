@@ -78,7 +78,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
                         </p>
                       </div>
                       <img
-                        src={`images/stackicons/${item.img}`}
+                        src={`/images/stackIcons/${item.img}`}
                         className="w-15 max-sm:w-11.25 bg-transparent"
                         alt=""
                       />
