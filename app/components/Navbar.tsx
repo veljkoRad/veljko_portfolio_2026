@@ -39,7 +39,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
         {/* Logo */}
         <button onClick={scrollTop} className=" cursor-pointer">
           {" "}
-          <div className="logo-family text-white text-3xl text-left  font-semibold tracking-wider">
+          <div className="logo-family text-primary text-3xl text-left  font-semibold tracking-wider">
             VR
           </div>
         </button>
@@ -64,8 +64,8 @@ const Navbar = ({ active, sections }: NavbarProps) => {
                     }}
                     className={`font-medium transition-colors cursor-pointer duration-100 ${
                       active === item.id
-                        ? "text-white"
-                        : "text-white/40 hover:text-white"
+                        ? "text-primary"
+                        : "text-primary/40 hover:text-primary"
                     } `}
                   >
                     {item.label}
@@ -81,7 +81,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
             className="md:hidden p-2 max-md:order-3"
             aria-label="Open mobile menu"
           >
-            <Menu className="text-white w-6 h-6" />
+            <Menu className="text-primary w-6 h-6" />
           </button>
           {/* Theme Toggle */}
           <button
@@ -90,7 +90,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
             aria-label="Toggle light and dark mode"
           >
             {theme === "light" ? (
-              <Moon color="#fff" className="w-6 h-6" />
+              <Moon className="w-6 h-6 text-primary" />
             ) : (
               <Sun color="#ffc107" className="w-6 h-6" />
             )}

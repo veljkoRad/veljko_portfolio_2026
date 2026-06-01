@@ -6,33 +6,38 @@
 
   --color-primary: var(--c-primary);
   --color-bg-first: var(--c-bg);
-  --color-bg-second: var(--c-bg-sn);
+  --color-bg-second: var(--c-card-sn);
+  --color-bg-sn: var(--c-bg-sn);
   --color-blue: var(--c-blue);
   --color-purple: var(--c-purple);
   --color-white: #fff;
   --color-red: #fb2c36;
   --color-navbar: var(--c-navbar);
   --color-card: var(--c-card);
+  --color-card-border: var(--c-card-border);
   --breakpoint-xs: 400px;
 }
 
 :root[data-theme="light"] {
-  --c-primary: #1f1f24;
-  --c-bg: #eef1f5;
-  --c-bg-sn: #cfdef5;
+  --c-primary: #0f172a;
+  --c-bg: #ffffff;
+  --c-card-sn: #ffffff;
+  --c-bg-sn: #f8fafc;
   --c-blue: #3b82f6;
   --c-purple: #a855f7;
-  --c-navbar: #3b82f6;
-  --c-card: #cfdef5;
+  --c-navbar: #ffffff;
+  --c-card: #fff;
+  --c-card-border: #fff;
 }
 :root[data-theme="dark"] {
   --c-primary: #ffffff;
   --c-bg: #121212;
-  --c-bg-sn: #1f1f24;
+  --c-card-sn: #1f1f24;
   --c-blue: #3b82f6;
   --c-purple: #a855f7;
   --c-navbar: #1f1f24;
   --c-card: #101123;
+  --c-card-border: #2a2e5a;
 }
 
 @layer base {
@@ -75,7 +80,7 @@
   }
 
   .section-title {
-    @apply text-4xl text-center  font-extrabold text-primary w-max m-auto;
+    @apply text-4xl text-center  font-extrabold text-primary w-max m-auto pt-10;
   }
 
   .form-input {
@@ -176,7 +181,7 @@
 
   .card2 {
     width: 100%;
-    border: 1px solid #2a2e5a;
+    border: 1px solid var(--color-card-border);
     border-radius: 14px;
     transition: all 0.2s;
     padding: 12px 20px;
@@ -205,7 +210,7 @@
 
   .pill-radio-container {
     --text-color: #fff;
-    --pill-bg: var(--c-bg-sn);
+    --pill-bg: var(--c-card-sn);
     --total-options: 8;
 
     display: flex;

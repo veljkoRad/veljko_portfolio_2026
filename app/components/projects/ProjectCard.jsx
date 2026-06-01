@@ -37,7 +37,7 @@ const ProjectCard = ({ cardData }) => {
             }}
           >
             <div
-              className="relative flex flex-col h-full items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl bg-bg-second pb-6"
+              className="relative flex flex-col h-full items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl bg-bg-second pb-6 shadow-2xl bg-second"
 
             >
               <div className=" group relative overflow-hidden rounded-t-2xl ">
@@ -54,7 +54,7 @@ const ProjectCard = ({ cardData }) => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1 border border-[3px] border-white/50  rounded-full text-white/50  hover:text-white hover:border-white">
+                      className="p-1 border border-[3px] border-white/50  rounded-full text-white/50  hover:text-white hover:border-white ">
                       <Eye
                         size={40}
                       />
@@ -100,7 +100,7 @@ const ProjectCard = ({ cardData }) => {
           <button
             onClick={() => pageChange(null, page - 1)}
             disabled={page === 1}
-            className="  disabled:opacity-10 text-white cursor-pointer px-5 py-1 bg-bg-second rounded-s-lg"
+            className=" shadow-2xl  disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-s-lg "
           >
             <ChevronLeft size={30} />
           </button>
@@ -108,7 +108,7 @@ const ProjectCard = ({ cardData }) => {
           <button
             onClick={() => pageChange(null, page + 1)}
             disabled={page === totalPage}
-            className="  disabled:opacity-10 text-white cursor-pointer px-5 py-1 bg-bg-second rounded-e-lg"
+            className="shadow-2xl  disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-e-lg"
           >
             <ChevronRight size={30} />
           </button>

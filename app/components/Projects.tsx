@@ -24,7 +24,7 @@ const Projects = ({ projectRef }: ProjectProps) => {
   const projectInView = useInView(projectRef, { once: true, margin: "-100px" });
 
   return (
-    <section className=" px-12 max-sm:px-6">
+    <section className=" px-12 max-sm:px-6 bg-bg-sn">
       <div className="container-main">
         <h2 className="section-title ">
           <SectionTitle>Projects</SectionTitle>
@@ -43,7 +43,7 @@ const Projects = ({ projectRef }: ProjectProps) => {
           }}
           className="pt-16 flex flex-col max-sm:items-center"
         >
-          <div className="pill-radio-container max-sm:gap-2">
+          <div className="pill-radio-container max-sm:gap-2 shadow-xl">
             {tabs.map((item) => (
               <Fragment key={item.id}>
                 <input

@@ -32,7 +32,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
     setValue(newValue);
   };
   return (
-    <section className=" px-12 max-sm:px-6  mt-10">
+    <section className=" px-12 max-sm:px-6  mt-10 bg-bg-sn">
       <div className="container-main">
         <div className="flex flex-col justify-center items-center gap-4">
           <h2 className="section-title ">
@@ -67,7 +67,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
             <div className=" max-md:text-sm leading-7 flex flex-col gap-6  ">
               {aboutCards.map((item, index) => (
                 <div className="card " key={index}>
-                  <div className="card2">
+                  <div className="card2 shadow-xl">
                     <p className="text-sm max-sm:text-xs font-medium text-purple text-center">
                       {item.name}
                     </p>
