@@ -46,7 +46,7 @@ const ProjectCard = ({ cardData }) => {
                   alt={item.name}
                   width={585}
                   height={376}
-                  className=" h-auto object-cover group-hover:scale-110 transition-transform duration-300 w-[448px] max-xl:w-full"
+                  className=" h-auto object-cover group-hover:scale-110 transition-transform duration-300 w-md max-xl:w-full"
                 />
                 <div className=" group-hover:flex justify-center gap-2 items-center hidden absolute bg-[rgba(18,18,18,0.85)] inset-0 ">
                   {item.link && (
@@ -54,7 +54,7 @@ const ProjectCard = ({ cardData }) => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1 border border-[3px] border-white/50  rounded-full text-white/50  hover:text-white hover:border-white ">
+                      className="p-1 border border-white/50  rounded-full text-white/50  hover:text-white hover:border-white ">
                       <Eye
                         size={40}
                       />
@@ -64,7 +64,7 @@ const ProjectCard = ({ cardData }) => {
                       href={item.git}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-[6px] border border-[3px] border-white/50  rounded-full text-white/50  hover:text-white hover:border-white">
+                      className="p-1.5 border  border-white/50  rounded-full text-white/50  hover:text-white hover:border-white">
                       <CodeXml
                         size={40}
                       />

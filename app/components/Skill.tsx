@@ -19,7 +19,7 @@ const SkillCategory = ({ category }: { category: SkillCategory }) => {
         <p className="pt-16 text-[28px] max-sm:text-[22px] max- font-medium text-primary/90 whitespace-nowrap">
           {category.label}
         </p>
-        <div className="w-[60%] h-[3px] bg-primary/40 mt-2.5"></div>
+        <div className="w-[60%] h-0.75 bg-primary/40 mt-2.5"></div>
       </div>
       <motion.div
         ref={ref}
@@ -47,7 +47,7 @@ const SkillCategory = ({ category }: { category: SkillCategory }) => {
               },
             }}
           >
-            <div className="bg-bg-second shadow-xl p-2 flex items-center justify-center gap-3 rounded-lg w-[160px] cursor-pointer hover:scale-110 transition-transform duration-300">
+            <div className="bg-bg-second shadow-xl p-2 flex items-center justify-center gap-3 rounded-lg w-40 cursor-pointer hover:scale-110 transition-transform duration-300">
               {item.icon}
               <p className="text-sm font-medium text-primary/90 text-start">
                 {item.title}

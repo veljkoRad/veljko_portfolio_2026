@@ -33,7 +33,7 @@ const Expertise = ({ expertiseRef }: expertiseProps) => {
           {/* Left Div Start */}
 
           <div className="flex-1">
-            <div className="  flex flex-col gap-6  max-w-[680px] ">
+            <div className="  flex flex-col gap-6  max-w-170 ">
               {techDesc2.map((item, index) => (
                 <div className="card " key={index}>
                   <div className="card2 p-8 bg-card shadow-xl">
@@ -53,13 +53,13 @@ const Expertise = ({ expertiseRef }: expertiseProps) => {
 
           {/* Right Div Start */}
           <div className=" flex-1  w-full flex justify-center ">
-            <img
+            <video
               src="/images/expertise_2.svg"
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-[367px] max-xl:h-[320px] max-md:h-100 max-sm:h-80"
+              className="w-full h-91.75 max-xl:h-80 max-md:h-100 max-sm:h-80"
             />
           </div>
           {/* Right Div End */}

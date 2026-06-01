@@ -28,17 +28,14 @@ const Build = ({ buildRef }: BuildProps) => {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mt-16 flex justify-center  max-lg:flex-col max-lg:gap-10 gap-[64px] "
+          className="mt-16 flex justify-center  max-lg:flex-col max-lg:gap-10 gap-16 "
         >
           {/* Left Div 1 Start */}
           <div className="flex-1 w-full flex justify-center ">
             <img
               src="/images/expertise.svg"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full max-h-[474px] max-xl:max-h-[420px]    max-xl:h-120 max-md:h-100 max-sm:h-80"
+              alt="expertise illustration"
+              className="h-full max-h-118.5 max-xl:max-h-105    max-xl:h-120 max-md:h-100 max-sm:h-80"
             />
           </div>
 

@@ -88,7 +88,7 @@
   }
 
   .container-main {
-    @apply max-sm:max-w-[100%] max-md:max-w-[544px] max-lg:max-w-[672px] max-xl:max-w-[1928px] max-2xl:max-w-[1184px] max-w-[1440px]   w-full mx-auto;
+    @apply max-sm:max-w-full max-md:max-w-136 max-lg:max-w-2xl max-xl:max-w-482 max-2xl:max-w-296 max-w-360   w-full mx-auto;
   }
   .tooltip {
     @apply bg-bg-first text-primary shadow-[0_4px_12px_rgba(0,0,0,0.15)];

@@ -54,11 +54,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
               Focused on scalable UI systems, API integrations, performance, and
               clean user experiences for digital products and businesses
             </p>
-            <a
-              className="button max-w-[200px] mt-6 "
-              href="/cv_2026.pdf"
-              download
-            >
+            <a className="button max-w-50 mt-6 " href="/cv_2026.pdf" download>
               Download CV
               <Download className="ml-2.5" />
             </a>
@@ -83,7 +79,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
                       </div>
                       <img
                         src={`images/stackicons/${item.img}`}
-                        className="w-[60px] max-sm:w-[45px] bg-transparent"
+                        className="w-15 max-sm:w-11.25 bg-transparent"
                         alt=""
                       />
                     </div>
