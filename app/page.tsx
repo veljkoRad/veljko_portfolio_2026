@@ -82,24 +82,19 @@ export default function Home() {
   return (
     <>
       <AnimatePresence>
-        {isLoading ? (
-          <LoadingScreen key="loading" />
-        ) : (
-          <div key="content">
-            <Navbar active={activeSection} sections={navSections} />
-            <main>
-              <Hero projectRef={projectRef} heroRef={heroRef} />
-              <About aboutRef={aboutRef} />
-              <Skill skillRef={skillRef} />
-              <Projects projectRef={projectRef} />
-              <Build buildRef={buildRef} />
-              <Expertise expertiseRef={expertiseRef} />
-              <Contact contactRef={contactRef} />
-            </main>
-            <Footer />
-          </div>
-        )}
+        {isLoading && <LoadingScreen key="loading" />}
       </AnimatePresence>
+      <Navbar active={activeSection} sections={navSections} />
+      <main>
+        <Hero projectRef={projectRef} heroRef={heroRef} />
+        <About aboutRef={aboutRef} />
+        <Skill skillRef={skillRef} />
+        <Projects projectRef={projectRef} />
+        <Build buildRef={buildRef} />
+        <Expertise expertiseRef={expertiseRef} />
+        <Contact contactRef={contactRef} />
+      </main>
+      <Footer />
     </>
   );
 }

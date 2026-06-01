@@ -30,32 +30,47 @@ const panelVariants: Variants = {
 const LoadingScreen = () => {
   return (
     <motion.div
-      className="fixed inset-0 z-60 pointer-events-none"
+      className="fixed inset-0 z-60"
       variants={containerVariants}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       {/* Curtain panels */}
-      <div className="absolute inset-0 flex">
+      <div className="absolute inset-0 flex   ">
         {Array.from({ length: PANEL_COUNT }).map((_, i) => (
           <motion.div
             key={i}
-            className="flex-1 bg-bg-second"
+            className="flex-1 bg-bg-second  overflow-hidden"
             variants={panelVariants}
           />
         ))}
       </div>
 
       {/* Loading Text overlay */}
-      <motion.p
-        className="absolute inset-0 flex items-center justify-center text-primary text-4xl tracking-widest font-semibold"
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        exit={{ opacity: 0, transition: { duration: 0.25 } }}
-        transition={{ duration: 1, repeat: Infinity }}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        LOADING
-      </motion.p>
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        >
+          <div
+            className="loader"
+            style={{ width: 150, height: 150, position: "relative" }}
+          >
+            <div className="loader_cube loader_cube--color"></div>
+            <div className="loader_cube loader_cube--glowing"></div>
+          </div>
+        </motion.div>
+      </div>
     </motion.div>
   );
 };
