@@ -47,7 +47,7 @@ const SkillCategory = ({ category }: { category: SkillCategory }) => {
               },
             }}
           >
-            <div className="bg-bg-second shadow-xl p-2 flex items-center justify-center gap-3 rounded-lg w-40 cursor-pointer hover:scale-110 transition-transform duration-300">
+            <div className="bg-bg-second shadow-lg shadow-blue/15 p-2 flex items-center justify-center gap-3 rounded-lg w-40 cursor-pointer hover:scale-110 transition-transform duration-300">
               {item.icon}
               <p className="text-sm font-medium text-primary/90 text-start">
                 {item.title}

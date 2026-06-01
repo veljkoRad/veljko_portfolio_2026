@@ -7,6 +7,7 @@ import Image from "next/image";
 const ProjectCard = ({ cardData }) => {
   // Pagination start
   const [page, setPage] = useState(1);
+  const [activeCard, setActiveCard] = useState(null);
   const pageChange = (item, value) => setPage(value);
   const cardsPerPage = 9;
   const firstCard = cardsPerPage * page - cardsPerPage;
@@ -37,10 +38,13 @@ const ProjectCard = ({ cardData }) => {
             }}
           >
             <div
-              className="relative flex flex-col h-full items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl bg-bg-second pb-6 shadow-2xl bg-second"
+              className="relative flex flex-col h-full items-start transition-all duration-300 ease-in cursor-pointer rounded-2xl bg-bg-second pb-6 shadow-lg shadow-blue/15 "
 
             >
-              <div className=" group relative overflow-hidden rounded-t-2xl ">
+              <div
+                className=" group relative overflow-hidden rounded-t-2xl "
+                onClick={() => setActiveCard(activeCard === index ? null : index)}
+              >
                 <Image
                   src={`/images/${item.image}`}
                   alt={item.name}
@@ -48,7 +52,7 @@ const ProjectCard = ({ cardData }) => {
                   height={376}
                   className=" h-auto object-cover group-hover:scale-110 transition-transform duration-300 w-md max-xl:w-full"
                 />
-                <div className=" group-hover:flex justify-center gap-2 items-center hidden absolute bg-[rgba(18,18,18,0.85)] inset-0 ">
+                <div className={`${activeCard === index ? "flex" : "hidden group-hover:flex"} justify-center gap-2 items-center absolute bg-[rgba(18,18,18,0.85)] inset-0`}>
                   {item.link && (
                     <a
                       href={item.link}
@@ -100,7 +104,7 @@ const ProjectCard = ({ cardData }) => {
           <button
             onClick={() => pageChange(null, page - 1)}
             disabled={page === 1}
-            className=" shadow-2xl  disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-s-lg "
+            className="   disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-s-lg "
           >
             <ChevronLeft size={30} />
           </button>
@@ -108,7 +112,7 @@ const ProjectCard = ({ cardData }) => {
           <button
             onClick={() => pageChange(null, page + 1)}
             disabled={page === totalPage}
-            className="shadow-2xl  disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-e-lg"
+            className=" disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-e-lg"
           >
             <ChevronRight size={30} />
           </button>

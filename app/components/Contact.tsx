@@ -64,21 +64,30 @@ const Contact = ({ contactRef }: ContactProps) => {
           initial={{ opacity: 0, y: 30 }}
           animate={contactInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-start max-xl:items-center mt-16 pb-16 max-lg:flex-col flex-row gap-4"
+          className="flex items-start max-xl:items-center mt-16 max-sm:mt-12 pb-16 max-lg:flex-col flex-row gap-4"
         >
           <div className="flex-1">
-            <h4 className="text-[28px] font-semibold"> E-mail </h4>
-            <div className="w-25 h-0.75 bg-primary/40 mt-2.5 rounded-full"></div>
-            <div className="flex gap-2 text-lg items-center text-blue mt-5">
-              <AtSign className="text-primary" size={40} />{" "}
+            <h4 className="text-[28px] max-sm:text-[24px]  font-semibold">
+              {" "}
+              E-mail{" "}
+            </h4>
+            <div className="w-25 h-0.75 max-sm:w-18 bg-primary/40 mt-2.5 rounded-full"></div>
+            <div className="flex gap-2 text-lg max-sm:text-sm items-center text-blue mt-5 max-sm:mt-2">
+              <AtSign className="text-primary max-sm:w-7 " size={40} />
               radivojevicveljko92@gmail.com
             </div>
-            <h4 className="text-[28px] font-semibold mt-16"> Adress </h4>
+            <h4 className="text-[28px] max-sm:text-[24px] font-semibold mt-16 max-sm:mt-12">
+              Adress
+            </h4>
             <div className="w-25 h-0.75 bg-primary/40 mt-2.5 rounded-full"></div>
-            <div className="flex gap-2 text-lg items-center text-blue mt-5">
-              <MapPin className="text-primary" size={40} /> Belgrade, Serbia
+            <div className="flex gap-2 text-lg max-sm:text-sm items-center text-blue mt-5 max-sm:mt-2">
+              <MapPin className="text-primary max-sm:w-7" size={40} /> Belgrade,
+              Serbia
             </div>
-            <h4 className="text-[28px] font-semibold mt-16"> Socials </h4>
+            <h4 className="text-[28px] max-sm:text-[24px] font-semibold mt-16 max-sm:mt-12">
+              {" "}
+              Socials{" "}
+            </h4>
             <div className="w-25 h-0.75 bg-primary/40 mt-2.5 rounded-full"></div>
             <div className="flex gap-2">
               <div className="flex gap-6 mt-6">
@@ -92,7 +101,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     height={42}
                     src="/images/stackIcons/github-icon.svg"
                     alt="github icon"
-                    className=" hover:scale-110 transition-transform duration-300"
+                    className=" hover:scale-110 transition-transform duration-300 max-sm:w-8"
                   />
                 </a>
 
@@ -106,7 +115,7 @@ const Contact = ({ contactRef }: ContactProps) => {
                     height={42}
                     src="/images/stackIcons/linkedin-icon.svg"
                     alt="linkedin icon"
-                    className="rounded-md hover:scale-110 transition-transform duration-300"
+                    className="rounded-md hover:scale-110 transition-transform duration-300  max-sm:w-8"
                   />
                 </a>
                 <a
@@ -119,14 +128,14 @@ const Contact = ({ contactRef }: ContactProps) => {
                     height={42}
                     src="/images/stackIcons/insta.svg"
                     alt="linkedin icon"
-                    className=" rounded-md hover:scale-110 transition-transform duration-300"
+                    className=" rounded-md hover:scale-110 transition-transform duration-300  max-sm:w-8"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            className="flex-1 border border-white/20 rounded-[20px] p-10 shadow-2xl flex flex-col items-center max-lg:mt-12"
+            className="flex-1 border border-white/20 rounded-[20px] p-10 shadow-lg shadow-blue/20 flex flex-col items-center max-lg:mt-12"
             style={{ background: "linear-gradient(135deg, #ffffff1a, #fff0)" }}
           >
             <form

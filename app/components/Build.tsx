@@ -46,7 +46,7 @@ const Build = ({ buildRef }: BuildProps) => {
             <div className="  flex flex-col gap-6 ">
               {techDesc.map((item, index) => (
                 <div className="card " key={index}>
-                  <div className="card2 p-8 shadow-xl">
+                  <div className="card2 p-8 shadow-lg shadow-blue/15">
                     <p className="text-xl font-medium  text-blue ">
                       {item.title}
                     </p>

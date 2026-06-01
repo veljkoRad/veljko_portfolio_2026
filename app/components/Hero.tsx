@@ -72,18 +72,18 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
               applications focused on performance, SEO, and clean user
               experience for startups, businesses, and digital products.
             </p>
-            <div className="flex gap-6 mt-6">
+            <div className="flex gap-4 mt-6">
               <a
                 href="https://github.com/veljkoRad"
                 aria-label="Github profile"
               >
                 <Image
                   priority
-                  width={42}
-                  height={42}
+                  width={35}
+                  height={35}
                   src="/images/stackIcons/github-icon.svg"
                   alt="github icon"
-                  className=" hover:scale-110 transition-transform duration-300"
+                  className=" hover:scale-110 transition-transform duration-300 max-sm:w-8"
                 />
               </a>
 
@@ -93,11 +93,11 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
               >
                 <Image
                   priority
-                  width={42}
-                  height={42}
+                  width={35}
+                  height={35}
                   src="/images/stackIcons/linkedin-icon.svg"
                   alt="linkedin icon"
-                  className="rounded-md hover:scale-110 transition-transform duration-300"
+                  className="rounded-md hover:scale-110 transition-transform duration-300 max-sm:w-8"
                 />
               </a>
             </div>

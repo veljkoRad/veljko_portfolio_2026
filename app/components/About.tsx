@@ -17,7 +17,7 @@ const aboutCards = [
     title: "BSc in Mechanical Engineering",
     desc: "University of Belgrade",
     year: "2018",
-    img: "UOB.jpg",
+    img: "UOB.png",
   },
 ];
 
@@ -71,13 +71,13 @@ const About = ({ aboutRef }: AboutTabContent) => {
             <div className=" max-md:text-sm leading-7 flex flex-col gap-6  ">
               {aboutCards.map((item, index) => (
                 <div className="card " key={index}>
-                  <div className="card2 shadow-xl">
+                  <div className="card2 shadow-lg shadow-blue/15">
                     <p className="text-sm max-sm:text-xs font-medium text-blue text-center">
                       {item.name}
                     </p>
                     <div className="flex justify-between items-center gap-8">
                       <div>
-                        <p className="text-lg max-sm:text-base font-bold mt-4 text-primary">
+                        <p className="text-md max-sm:text-base font-bold mt-4 text-primary">
                           {item.title}
                         </p>
                         <p className="text-primary">{item.desc}</p>
@@ -87,7 +87,7 @@ const About = ({ aboutRef }: AboutTabContent) => {
                       </div>
                       <img
                         src={`/images/stackIcons/${item.img}`}
-                        className="w-15 max-sm:w-11.25 bg-transparent"
+                        className="w-12.5 h-auto max-sm:w-10 bg-transparent"
                         alt=""
                       />
                     </div>

@@ -43,7 +43,7 @@ const Projects = ({ projectRef }: ProjectProps) => {
           }}
           className="pt-16 flex flex-col max-sm:items-center"
         >
-          <div className="pill-radio-container max-sm:gap-2 shadow-xl">
+          <div className="pill-radio-container max-sm:gap-2 shadow-lg shadow-blue/15">
             {tabs.map((item) => (
               <Fragment key={item.id}>
                 <input
