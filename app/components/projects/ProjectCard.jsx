@@ -9,7 +9,7 @@ const ProjectCard = ({ cardData }) => {
   const [page, setPage] = useState(1);
   const [activeCard, setActiveCard] = useState(null);
   const pageChange = (item, value) => setPage(value);
-  const cardsPerPage = 9;
+  const cardsPerPage = 6;
   const firstCard = cardsPerPage * page - cardsPerPage;
   const lastCard = cardsPerPage * page;
   const filterCard = cardData.slice(firstCard, lastCard);
@@ -104,7 +104,7 @@ const ProjectCard = ({ cardData }) => {
           <button
             onClick={() => pageChange(null, page - 1)}
             disabled={page === 1}
-            className="   disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-s-lg "
+            className="   disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-s-lg shadow-lg shadow-blue/20 "
           >
             <ChevronLeft size={30} />
           </button>
@@ -112,7 +112,7 @@ const ProjectCard = ({ cardData }) => {
           <button
             onClick={() => pageChange(null, page + 1)}
             disabled={page === totalPage}
-            className=" disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-e-lg"
+            className=" disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-e-lg shadow-lg shadow-blue/20"
           >
             <ChevronRight size={30} />
           </button>
