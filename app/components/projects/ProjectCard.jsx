@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, ChevronLeft, Eye, CodeXml } from "lucide-react";
+import { ChevronRight, ChevronLeft, Eye, CodeXml } from "lucide-react";
 import Image from "next/image";
 
 const ProjectCard = ({ cardData }) => {

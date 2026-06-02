@@ -31,19 +31,27 @@ export const allProjectList = [
     icons: ["react.svg", "material-ui.png", "wordpress.png"],
   },
   {
+    name: "Stock Market",
+    image: "lp/stockMarket.png",
+    desc: "Responsive Landing page with sign-up form,diagram",
+    link: "https://dlp.fortrade.com/lps/pro-stock-market-ephone-ca/en",
+    icons: ["html.png", "css-3.png", "javascript.png"],
+  },
+  {
+    name: "Spacex Ipo",
+    image: "lp/spacex.png",
+    desc: "Responsive Landing page with sign-up form,diagram",
+    link: "https://dlp.fortrade.com/lps/spacex-ipo/en",
+    icons: ["html.png", "css-3.png", "javascript.png"],
+  },
+  {
     name: "Global Markets",
     image: "lp/globalMarkets.png",
     desc: "Responsive Landing page with sign-up form, table with live updates",
     link: "https://www.fortrade.com/minilps/en/global-markets-dark/",
     icons: ["html.png", "css-3.png", "javascript.png"],
   },
-  {
-    name: "Premium Forex",
-    image: "lp/premiumForex.png",
-    desc: "Responsive Landing page with sign-up form,diagram",
-    link: "https://dlp.fortrade.com/lps/premium-forex-landing-ephone-ca/en",
-    icons: ["html.png", "css-3.png", "javascript.png"],
-  },
+
   {
     name: "Crude Oil",
     image: "lp/crudeOil.png",
@@ -174,17 +182,24 @@ export const reactProjectList = [
 
 export const landingPageList = [
   {
+    name: "Stock Market",
+    image: "lp/stockMarket.png",
+    desc: "Responsive Landing page with sign-up form,diagram",
+    link: "https://dlp.fortrade.com/lps/pro-stock-market-ephone-ca/en",
+    icons: ["html.png", "css-3.png", "javascript.png"],
+  },
+  {
+    name: "Spacex Ipo",
+    image: "lp/spacex.png",
+    desc: "Responsive Landing page with sign-up form,diagram",
+    link: "https://dlp.fortrade.com/lps/spacex-ipo/en",
+    icons: ["html.png", "css-3.png", "javascript.png"],
+  },
+  {
     name: "Global Markets",
     image: "lp/globalMarkets.png",
     desc: "Responsive Landing page with sign-up form, table with live updates",
     link: "https://www.fortrade.com/minilps/en/global-markets-dark/",
-    icons: ["html.png", "css-3.png", "javascript.png"],
-  },
-  {
-    name: "Premium Forex",
-    image: "lp/premiumForex.png",
-    desc: "Responsive Landing page with sign-up form,diagram",
-    link: "https://dlp.fortrade.com/lps/premium-forex-landing-ephone-ca/en",
     icons: ["html.png", "css-3.png", "javascript.png"],
   },
   {
