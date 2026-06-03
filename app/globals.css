@@ -181,7 +181,7 @@
   .card2 {
     width: 100%;
     border: 1px solid var(--color-card-border);
-    border-radius: 14px;
+    border-radius: 12px;
     transition: all 0.2s;
     padding: 12px 20px;
     cursor: pointer;

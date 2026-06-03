@@ -8,10 +8,10 @@ import SectionTitle from "./UI/SectionTitle";
 import AllTab from "./projects/AllTab";
 
 const tabs = [
-  { label: "all", component: <AllTab />, id: "pill-all" },
-  { label: "react", component: <ReactTab />, id: "pill-react" },
-  { label: "landing", component: <LandingPageTab />, id: "pill-landing" },
-  { label: "email", component: <EmailTab />, id: "pill-email" },
+  { label: "all", Tab: AllTab, id: "pill-all" },
+  { label: "react", Tab: ReactTab, id: "pill-react" },
+  { label: "landing", Tab: LandingPageTab, id: "pill-landing" },
+  { label: "email", Tab: EmailTab, id: "pill-email" },
 ];
 
 type ProjectProps = {
@@ -20,8 +20,8 @@ type ProjectProps = {
 const Projects = ({ projectRef }: ProjectProps) => {
   const [value, setValue] = useState(0);
   const [project, setProject] = useState("all");
-  const handleChange = (index: number) => setValue(index);
   const projectInView = useInView(projectRef, { once: true, margin: "-100px" });
+  const ActiveTab = tabs[value].Tab;
 
   return (
     <section className=" px-12 max-sm:px-6 bg-bg-sn">
@@ -78,9 +78,14 @@ const Projects = ({ projectRef }: ProjectProps) => {
 
           {/* Preload all tabs so images stay cached */}
           <div className="hidden">
-            {tabs.map((tab) => (
-              <div key={`preload-${tab.label}`}>{tab.component}</div>
-            ))}
+            {tabs.map((tab) => {
+              const Tab = tab.Tab;
+              return (
+                <div key={`preload-${tab.label}`}>
+                  <Tab projectRef={projectRef} />
+                </div>
+              );
+            })}
           </div>
           {/* Animated active tab */}
           <AnimatePresence mode="wait">
@@ -91,7 +96,7 @@ const Projects = ({ projectRef }: ProjectProps) => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              {tabs[value].component}
+              <ActiveTab projectRef={projectRef} />
             </motion.div>
           </AnimatePresence>
         </motion.div>

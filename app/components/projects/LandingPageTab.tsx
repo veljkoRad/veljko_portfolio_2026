@@ -1,8 +1,12 @@
 import { landingPageList } from "@/data/projectData";
 import ProjectCard from "./ProjectCard";
 
-const LandingPageTab = () => {
-  return <ProjectCard cardData={landingPageList} />;
+type LandingPageTabProps = {
+  projectRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const LandingPageTab = ({ projectRef }: LandingPageTabProps) => {
+  return <ProjectCard cardData={landingPageList} projectRef={projectRef} />;
 };
 
 export default LandingPageTab;

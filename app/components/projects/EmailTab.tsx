@@ -1,8 +1,12 @@
 import { emailProjectList } from "@/data/projectData";
 import ProjectCard from "./ProjectCard";
 
-const EmailTab = () => {
-  return <ProjectCard cardData={emailProjectList} />;
+type EmailTabProps = {
+  projectRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const EmailTab = ({ projectRef }: EmailTabProps) => {
+  return <ProjectCard cardData={emailProjectList} projectRef={projectRef} />;
 };
 
 export default EmailTab;

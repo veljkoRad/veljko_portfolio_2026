@@ -135,7 +135,7 @@ const Contact = ({ contactRef }: ContactProps) => {
             </div>
           </div>
           <div
-            className="flex-1 border border-white/20 rounded-[20px] p-10 shadow-lg shadow-blue/20 flex flex-col items-center max-lg:mt-12"
+            className="flex-1 border border-white/20 rounded-[20px] p-10 shadow-lg shadow-blue/15 flex flex-col items-center max-lg:mt-12"
             style={{ background: "linear-gradient(135deg, #ffffff1a, #fff0)" }}
           >
             <form

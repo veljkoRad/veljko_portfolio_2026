@@ -1,19 +1,65 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft, Eye, CodeXml } from "lucide-react";
 import Image from "next/image";
 
-const ProjectCard = ({ cardData }) => {
+const ProjectCard = ({ cardData, projectRef }) => {
   // Pagination start
   const [page, setPage] = useState(1);
   const [activeCard, setActiveCard] = useState(null);
-  const pageChange = (item, value) => setPage(value);
   const cardsPerPage = 6;
-  const firstCard = cardsPerPage * page - cardsPerPage;
-  const lastCard = cardsPerPage * page;
+  const totalPage = Math.max(1, Math.ceil(cardData.length / cardsPerPage));
+  const firstCard = cardsPerPage * (page - 1);
+  const lastCard = firstCard + cardsPerPage;
   const filterCard = cardData.slice(firstCard, lastCard);
-  const totalPage = Math.ceil(cardData.length / cardsPerPage);
+  const showPagination = cardData.length > cardsPerPage;
+  const skipScrollOnMountRef = useRef(true);
+
+  /** Fixed navbar clearance — matches scroll target used elsewhere on the page. */
+  const NAVBAR_OFFSET = 72;
+
+  /**
+   * @description Scrolls to the projects anchor using document coordinates so layout
+   * height changes (e.g. fewer cards on the last page) still reposition correctly.
+   */
+  const scrollToProjectsSection = () => {
+    const el = projectRef?.current;
+    if (!el) return;
+
+    const top =
+      // .top is the distance from top of viewport to top of this element
+      // window.scrollY is the distance from top of viewport to top of the page
+      // 800px + (-75px) =725px
+      el.getBoundingClientRect().top + window.scrollY - NAVBAR_OFFSET;
+
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  };
+
+  // Scroll after the new page is painted — avoids stale height from the previous page.
+  useEffect(() => {
+    if (skipScrollOnMountRef.current) {
+      skipScrollOnMountRef.current = false;
+      return;
+    }
+
+    const frameId = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollToProjectsSection();
+      });
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [page]);
+
+  /**
+   * @description Updates the current page when in range.
+   * @param {number} nextPage - The target page index (1-based).
+   */
+  const handlePageChange = (nextPage) => {
+    if (nextPage < 1 || nextPage > totalPage) return;
+    setPage(nextPage);
+  };
   // Pagination End
 
   return (
@@ -50,7 +96,7 @@ const ProjectCard = ({ cardData }) => {
                   alt={item.name}
                   width={585}
                   height={376}
-                  className="  object-cover group-hover:scale-110 transition-transform duration-300 w-[585px]"
+                  className="  object-cover group-hover:scale-110 transition-transform duration-300 w-146.25"
                 />
                 <div className={`${activeCard === index ? "flex" : "hidden group-hover:flex"} justify-center gap-2 items-center absolute bg-[rgba(18,18,18,0.85)] inset-0`}>
                   {item.link && (
@@ -99,10 +145,10 @@ const ProjectCard = ({ cardData }) => {
         ))}
       </div >
       {/* Pagination */}
-      {cardData?.length >= cardsPerPage && (
+      {showPagination && (
         <div className="flex justify-start  mt-5">
           <button
-            onClick={() => pageChange(null, page - 1)}
+            onClick={() => handlePageChange(page - 1)}
             disabled={page === 1}
             className="   disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-s-lg shadow-lg shadow-blue/20 "
           >
@@ -110,7 +156,7 @@ const ProjectCard = ({ cardData }) => {
           </button>
 
           <button
-            onClick={() => pageChange(null, page + 1)}
+            onClick={() => handlePageChange(page + 1)}
             disabled={page === totalPage}
             className=" disabled:opacity-10 text-primary cursor-pointer px-5 py-1 bg-bg-second rounded-e-lg shadow-lg shadow-blue/20"
           >

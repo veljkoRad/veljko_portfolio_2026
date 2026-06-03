@@ -1,8 +1,12 @@
 import { reactProjectList } from "@/data/projectData";
 import ProjectCard from "./ProjectCard";
 
-const ReactTab = () => {
-  return <ProjectCard cardData={reactProjectList} />;
+type ReactTabProps = {
+  projectRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const ReactTab = ({ projectRef }: ReactTabProps) => {
+  return <ProjectCard cardData={reactProjectList} projectRef={projectRef} />;
 };
 
 export default ReactTab;
