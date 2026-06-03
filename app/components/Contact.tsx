@@ -50,6 +50,7 @@ const Contact = ({ contactRef }: ContactProps) => {
       reset();
     } catch (e) {
       const err = e as { status?: number; text?: string };
+      console.error("Email send failed:", err);
     }
   };
 
@@ -119,8 +120,8 @@ const Contact = ({ contactRef }: ContactProps) => {
                   />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/veljko-radivojevic-77a825267"
-                  aria-label="LinkedIn profile"
+                  href="https://www.instagram.com/rveljko92/"
+                  aria-label="Insta profile"
                 >
                   <Image
                     priority

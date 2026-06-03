@@ -15,12 +15,11 @@ const Expertise = ({ expertiseRef }: expertiseProps) => {
 
   return (
     <section className=" px-12 max-sm:px-6 bg-bg-sn">
-      <div className="container-main pb-16">
+      <div className="container-main pb-16" ref={expertiseRef}>
         <h2 className="section-title ">
           <SectionTitle>Expertise</SectionTitle>
         </h2>
         <motion.div
-          ref={expertiseRef}
           initial="hidden"
           animate={expertiseInView ? "visible" : "hidden"}
           variants={{

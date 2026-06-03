@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft, Eye, CodeXml } from "lucide-react";
 import Image from "next/image";
+import { NAVBAR_HEIGHT } from "@/lib/constants";
 
 const ProjectCard = ({ cardData, projectRef }) => {
   // Pagination start
@@ -16,13 +17,8 @@ const ProjectCard = ({ cardData, projectRef }) => {
   const showPagination = cardData.length > cardsPerPage;
   const skipScrollOnMountRef = useRef(true);
 
-  /** Fixed navbar clearance — matches scroll target used elsewhere on the page. */
-  const NAVBAR_OFFSET = 72;
+  // WHen presing pagination button, scroll to the project section, but skip Navbar height (72px)
 
-  /**
-   * @description Scrolls to the projects anchor using document coordinates so layout
-   * height changes (e.g. fewer cards on the last page) still reposition correctly.
-   */
   const scrollToProjectsSection = () => {
     const el = projectRef?.current;
     if (!el) return;
@@ -31,7 +27,7 @@ const ProjectCard = ({ cardData, projectRef }) => {
       // .top is the distance from top of viewport to top of this element
       // window.scrollY is the distance from top of viewport to top of the page
       // 800px + (-75px) =725px
-      el.getBoundingClientRect().top + window.scrollY - NAVBAR_OFFSET;
+      el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT;
 
     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
   };
@@ -43,6 +39,8 @@ const ProjectCard = ({ cardData, projectRef }) => {
       return;
     }
 
+    // Use double RAF to ensure DOM is painted before scrolling.
+    // First RAF: wait for paint. Second RAF: ensure layout is stable.
     const frameId = requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         scrollToProjectsSection();
@@ -52,10 +50,6 @@ const ProjectCard = ({ cardData, projectRef }) => {
     return () => cancelAnimationFrame(frameId);
   }, [page]);
 
-  /**
-   * @description Updates the current page when in range.
-   * @param {number} nextPage - The target page index (1-based).
-   */
   const handlePageChange = (nextPage) => {
     if (nextPage < 1 || nextPage > totalPage) return;
     setPage(nextPage);

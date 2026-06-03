@@ -19,18 +19,16 @@ type ProjectProps = {
 };
 const Projects = ({ projectRef }: ProjectProps) => {
   const [value, setValue] = useState(0);
-  const [project, setProject] = useState("all");
   const projectInView = useInView(projectRef, { once: true, margin: "-100px" });
   const ActiveTab = tabs[value].Tab;
 
   return (
     <section className=" px-12 max-sm:px-6 bg-bg-sn">
-      <div className="container-main">
+      <div className="container-main " ref={projectRef}>
         <h2 className="section-title ">
           <SectionTitle>Projects</SectionTitle>
         </h2>
         <motion.div
-          ref={projectRef}
           initial="hidden"
           animate={projectInView ? "visible" : "hidden"}
           variants={{
@@ -44,19 +42,14 @@ const Projects = ({ projectRef }: ProjectProps) => {
           className="pt-16 flex flex-col max-sm:items-center"
         >
           <div className="pill-radio-container max-sm:gap-2 shadow-lg shadow-blue/15">
-            {tabs.map((item) => (
+            {tabs.map((item, index) => (
               <Fragment key={item.id}>
                 <input
-                  checked={project === item.label}
+                  checked={value === index}
                   name="project"
                   id={item.id}
                   type="radio"
-                  onChange={() => {
-                    setProject(item.label);
-                    setValue(
-                      tabs.findIndex((tab) => tab.label === item.label) || 0,
-                    );
-                  }}
+                  onChange={() => setValue(index)}
                 />
                 <label
                   className="capitalize text-primary max-sm:px-3 py-2 max-sm:text-sm"

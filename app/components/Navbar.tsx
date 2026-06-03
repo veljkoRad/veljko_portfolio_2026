@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, RefObject } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
+import { NAVBAR_HEIGHT } from "@/lib/constants";
 
 type NavSection = {
   id: string;
@@ -11,6 +12,16 @@ type NavSection = {
 type NavbarProps = {
   active: string;
   sections: NavSection[];
+};
+
+const scrollToSection = (element: HTMLElement | null, offset: number) => {
+  if (!element) return;
+  const elementPosition =
+    element.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({
+    top: elementPosition,
+    behavior: "smooth",
+  });
 };
 
 const Navbar = ({ active, sections }: NavbarProps) => {
@@ -51,16 +62,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
                 <li key={item.id}>
                   <button
                     onClick={() => {
-                      const navHeight = 200; // adjust to your navbar height
-                      const element = item.ref.current;
-                      if (element) {
-                        const elementPosition =
-                          element.getBoundingClientRect().top + window.scrollY;
-                        window.scrollTo({
-                          top: elementPosition - navHeight,
-                          behavior: "smooth",
-                        });
-                      }
+                      scrollToSection(item.ref.current, NAVBAR_HEIGHT);
                     }}
                     className={`font-medium transition-colors cursor-pointer duration-100 ${
                       active === item.id
@@ -139,16 +141,7 @@ const Navbar = ({ active, sections }: NavbarProps) => {
                 <button
                   onClick={() => {
                     setToggleMobile(false);
-                    const navHeight = 200; // adjust to your navbar height
-                    const element = item.ref.current;
-                    if (element) {
-                      const elementPosition =
-                        element.getBoundingClientRect().top + window.scrollY;
-                      window.scrollTo({
-                        top: elementPosition - navHeight,
-                        behavior: "smooth",
-                      });
-                    }
+                    scrollToSection(item.ref.current, NAVBAR_HEIGHT);
                   }}
                   className="w-full text-left px-8 py-2 font-medium text-primary/90 hover:bg-bg-second transition-colors cursor-pointer"
                 >

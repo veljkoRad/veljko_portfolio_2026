@@ -1,4 +1,4 @@
-'use client";';
+"use client";
 import { useState, RefObject } from "react";
 import { motion, useInView } from "framer-motion";
 import { Download } from "lucide-react";
@@ -28,20 +28,19 @@ const About = ({ aboutRef }: AboutTabContent) => {
   const aboutInView = useInView(aboutRef, { once: true, margin: "-150px" });
 
   const [value, setValue] = useState(0);
-  const handleChange = (newValue: number) => {
-    setValue(newValue);
-  };
   return (
     <section className=" px-12 max-sm:px-6  mt-10 bg-bg-sn">
       <div className="container-main">
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div
+          className="flex flex-col justify-center items-center gap-4 "
+          ref={aboutRef}
+        >
           <h2 className="section-title ">
             <SectionTitle>About Me</SectionTitle>
           </h2>
         </div>
 
         <motion.div
-          ref={aboutRef}
           initial={{ opacity: 0, y: 30 }}
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}

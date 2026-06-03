@@ -34,7 +34,7 @@ const Hero = ({ projectRef, heroRef }: HeroProps) => {
         deleting ? speed / 2 : speed,
       );
       return () => clearTimeout(timeout);
-    }, [display, deleting, index]);
+    }, [display, deleting, index, texts]);
 
     return display;
   }

@@ -15,12 +15,11 @@ const Build = ({ buildRef }: BuildProps) => {
 
   return (
     <section className=" px-12 max-sm:px-6 ">
-      <div className="container-main pb-16">
+      <div className="container-main pb-16 " ref={buildRef}>
         <h2 className="section-title ">
           <SectionTitle>Build</SectionTitle>
         </h2>
         <motion.div
-          ref={buildRef}
           initial="hidden"
           animate={buildInView ? "visible" : "hidden"}
           variants={{
