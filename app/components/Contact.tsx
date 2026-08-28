@@ -75,7 +75,7 @@ const Contact = ({ contactRef }: ContactProps) => {
             <div className="w-25 h-0.75 max-sm:w-18 bg-primary/40 mt-2.5 rounded-full"></div>
             <div className="flex gap-2 text-lg max-sm:text-sm items-center text-blue mt-5 max-sm:mt-2">
               <AtSign className="text-primary max-sm:w-7 " size={40} />
-              radivojevicveljko92@gmail.com
+              radivojevicveljko@gmail.com
             </div>
             <h4 className="text-[28px] max-sm:text-[24px] font-semibold mt-16 max-sm:mt-12">
               Adress
